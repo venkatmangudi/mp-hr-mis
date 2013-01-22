@@ -1,0 +1,17 @@
+<%= semantic_form_for(@person) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+      <%= f.semantic_errors %>
+    </div>
+  <% end %>
+  <div class="well">
+    <%= f.inputs do %>
+      <%= f.input :title %>
+      <%= f.input :body %>
+    <% end %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Submit", :class =>"btn btn-primary" %>
+  </div>
+<% end %>
