@@ -1,0 +1,41 @@
+<%- model_class = EmpAdd -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:emp_id) %>:</strong></dt>
+  <dd><%= @emp_add.emp_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_martial_status_id) %>:</strong></dt>
+  <dd><%= @emp_add.emp_martial_status_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_present_addr) %>:</strong></dt>
+  <dd><%= @emp_add.emp_present_addr %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_identification) %>:</strong></dt>
+  <dd><%= @emp_add.emp_identification %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_pannum) %>:</strong></dt>
+  <dd><%= @emp_add.emp_pannum %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_dlnum) %>:</strong></dt>
+  <dd><%= @emp_add.emp_dlnum %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_passportnum) %>:</strong></dt>
+  <dd><%= @emp_add.emp_passportnum %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_alt_email) %>:</strong></dt>
+  <dd><%= @emp_add.emp_alt_email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_alt_phone) %>:</strong></dt>
+  <dd><%= @emp_add.emp_alt_phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_alt_mobile) %>:</strong></dt>
+  <dd><%= @emp_add.emp_alt_mobile %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:emp_present_loc_master_id) %>:</strong></dt>
+  <dd><%= @emp_add.emp_present_loc_master_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              emp_adds_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_emp_add_path(@emp_add), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              emp_add_path(@emp_add),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

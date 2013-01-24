@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  loc_master_id: MyString
+  city_id: MyString
+  taluk_id: MyString
+  district_id: MyString
+  state_id: MyString
+  country_id: MyString
+  pincode_id: MyString
+
+two:
+  loc_master_id: MyString
+  city_id: MyString
+  taluk_id: MyString
+  district_id: MyString
+  state_id: MyString
+  country_id: MyString
+  pincode_id: MyString
