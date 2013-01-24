@@ -16,3 +16,8 @@
 //= require_tree .
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
+//= require twitter/bootstrap/bootstrap-transition
+//= require twitter/bootstrap/bootstrap-alert
+//= require twitter/bootstrap/bootstrap-modal
+//= require twitter/bootstrap/bootstrap-button
+//= require twitter/bootstrap/bootstrap-collapse

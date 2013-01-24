@@ -8,6 +8,7 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -50,9 +51,9 @@
               <li class="dropdown">
                 <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Transactions <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                    <li><a href="/employees/new" data-method="get">Transfer</a></li>
-                    <li><%= link_to "Suspend", employees_path %></li>
-                    <li><%= link_to "Other Stuff", emp_adds_path %></li>
+                    <li class="disabled"><a href="/employees/new" data-method="get">Transfer</a></li>
+                    <li class="disabled"><%= link_to "Suspend", employees_path %></li>
+                    <li class="disabled"><%= link_to "Other Stuff", emp_adds_path %></li>
 
                     <!-- <li class="divider"></li>
                     <li><a tabindex="-1" href="#">Separated link</a></li> -->
@@ -67,6 +68,7 @@
 
 <div class="container">
 	<div class="row">
+    <%= render partial: "layouts/flash_messages", locals: { flash: flash }%>
 		<div class="span9"><%= yield %></div>
 <!-- 		<div class="span3">
 			<h2>About Us</h2>
