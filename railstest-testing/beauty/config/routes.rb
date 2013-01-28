@@ -1,8 +1,44 @@
 Beauty::Application.routes.draw do
-  resources :emp_adds
+  resources :religions
+
+
+  resources :categories
+
+
+  resources :castes
+
+
+  resources :martial_stats
+
+
+  resources :blood_groups
+
+
+  resources :genders
 
 
   resources :locations
+
+
+  resources :pincodes
+
+
+  resources :states
+
+
+  resources :cities
+
+
+  resources :districts
+
+
+  resources :taluks
+
+
+  resources :emp_edus
+
+
+  resources :emp_adds
 
 
   resources :employees

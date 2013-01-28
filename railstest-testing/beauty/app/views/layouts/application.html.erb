@@ -26,22 +26,13 @@
           <a class="brand" href="/home/index">HRMIS</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="dropdown">
-                <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Masters <b class="caret"></b></a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                    <li><%= link_to "Locations", locations_path %></li>
-                    <li><%= link_to "Additional Info", emp_adds_path %></li>
-
-                    <!-- <li class="divider"></li>
-                    <li><a tabindex="-1" href="#">Separated link</a></li> -->
-                  </ul>
-              </li>
             <!-- <li><%= link_to "HRMIS Patients", posts_path %></li> -->
               <li class="dropdown">
                 <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Employees <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                     <li><a href="/employees/new" data-method="get">Add Employee</a></li>
-                    <li><%= link_to "View Employees", employees_path %></li>
+                    <li><%= link_to "View Employees", cities_path %></li>
+                    <li><%= link_to "Employee Education", emp_edus_path %></li>
                     <li><%= link_to "Additional Info", emp_adds_path %></li>
 
                     <!-- <li class="divider"></li>
@@ -55,6 +46,46 @@
                     <li class="disabled"><%= link_to "Suspend", employees_path %></li>
                     <li class="disabled"><%= link_to "Other Stuff", emp_adds_path %></li>
 
+                    <!-- <li class="divider"></li>
+                    <li><a tabindex="-1" href="#">Separated link</a></li> -->
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+                <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Masters <b class="caret"></b></a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                    <li><a href="/employees/new" data-method="get">Add Employee</a></li>
+                    <li><%= link_to "View Employees", cities_path %></li>
+                    <li><%= link_to "Employee Education", emp_edus_path %></li>
+
+                    <li class="divider"></li>
+                    <li><%= link_to "Institutions", emp_adds_path %></li>
+                    
+                    <li class="divider"></li>
+                      <li><%= link_to "Gender", genders_path %></li>
+                      <li><%= link_to "Marial Status", martial_stats_path %></li>
+                      <li><%= link_to "Blood Group", blood_groups_path %></li>
+                                        
+                     <li class="divider"></li>
+                      <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Ethnicity</a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to "Caste", castes_path %></li>
+                          <li><%= link_to "Category", categories_path %></li>
+                          <li><%= link_to "Religion", religions_path %></li>
+                        </ul>
+                      </li>
+
+                    <li class="divider"></li>
+                      <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Location Data</a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to "Cities", cities_path %></li>
+                          <li><%= link_to "States", states_path %></li>
+                          <li><%= link_to "Country", pincodes_path %></li>
+                          <li><%= link_to "Pincodes", pincodes_path %></li>
+                        </ul>
+                      </li>
                     <!-- <li class="divider"></li>
                     <li><a tabindex="-1" href="#">Separated link</a></li> -->
                   </ul>
@@ -73,7 +104,7 @@
 <!-- 		<div class="span3">
 			<h2>About Us</h2>
 			This is SkyKOG Magic :) 
-      <%= link_to "My Blog", locations_path %>
+
 		</div> -->
 	</div>
 </div>

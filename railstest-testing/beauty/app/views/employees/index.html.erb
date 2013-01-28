@@ -2,7 +2,7 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<table class="table table-condensed" id="employee">
+<table class="table table-condensed" id="employe">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -75,10 +75,8 @@
   // $(document).ready(function() {
   //   $('#entry').dataTable();
   // } );
-
-<script>
     $(document).ready(function() {
-      $('#employee').dataTable( {
+      $('#employe').dataTable( {
         "sPaginationType": "bootstrap"
       } );
     }

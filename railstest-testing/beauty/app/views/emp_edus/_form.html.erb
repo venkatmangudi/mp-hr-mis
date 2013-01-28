@@ -1,0 +1,11 @@
+<%= simple_form_for @emp_edu, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :emp_id %>
+  <%= f.input :emp_education %>
+  <%= f.input :emp_specialisation %>
+  <%= f.input :emp_remarks %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                emp_edus_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  emp_id: MyString
+  emp_education: MyString
+  emp_specialisation: MyString
+  emp_remarks: MyText
+
+two:
+  emp_id: MyString
+  emp_education: MyString
+  emp_specialisation: MyString
+  emp_remarks: MyText

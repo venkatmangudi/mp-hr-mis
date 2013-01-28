@@ -18,7 +18,7 @@ class LocationsControllerTest < ActionController::TestCase
 
   test "should create location" do
     assert_difference('Location.count') do
-      post :create, location: { city_id: @location.city_id, country_id: @location.country_id, district_id: @location.district_id, loc_master_id: @location.loc_master_id, pincode_id: @location.pincode_id, state_id: @location.state_id, taluk_id: @location.taluk_id }
+      post :create, location: { city_id: @location.city_id, country_id: @location.country_id, district_id: @location.district_id, pincode_id: @location.pincode_id, state_id: @location.state_id, taluk_id: @location.taluk_id }
     end
 
     assert_redirected_to location_path(assigns(:location))
@@ -35,7 +35,7 @@ class LocationsControllerTest < ActionController::TestCase
   end
 
   test "should update location" do
-    put :update, id: @location, location: { city_id: @location.city_id, country_id: @location.country_id, district_id: @location.district_id, loc_master_id: @location.loc_master_id, pincode_id: @location.pincode_id, state_id: @location.state_id, taluk_id: @location.taluk_id }
+    put :update, id: @location, location: { city_id: @location.city_id, country_id: @location.country_id, district_id: @location.district_id, pincode_id: @location.pincode_id, state_id: @location.state_id, taluk_id: @location.taluk_id }
     assert_redirected_to location_path(assigns(:location))
   end
 

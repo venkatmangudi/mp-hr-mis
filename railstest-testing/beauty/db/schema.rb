@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123095633) do
+ActiveRecord::Schema.define(:version => 20130128071830) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,36 @@ ActiveRecord::Schema.define(:version => 20130123095633) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "blood_groups", :force => true do |t|
+    t.string   "blood_group_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "castes", :force => true do |t|
+    t.string   "caste_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "category_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "cities", :force => true do |t|
+    t.string   "city_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "districts", :force => true do |t|
+    t.string   "district_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "emp_adds", :force => true do |t|
     t.string   "emp_id"
     t.string   "emp_martial_status_id"
@@ -60,6 +90,15 @@ ActiveRecord::Schema.define(:version => 20130123095633) do
     t.string   "emp_present_loc_master_id"
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
+  end
+
+  create_table "emp_edus", :force => true do |t|
+    t.string   "emp_id"
+    t.string   "emp_education"
+    t.string   "emp_specialisation"
+    t.text     "emp_remarks"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "employees", :force => true do |t|
@@ -86,22 +125,57 @@ ActiveRecord::Schema.define(:version => 20130123095633) do
     t.datetime "updated_at",            :null => false
   end
 
+  create_table "genders", :force => true do |t|
+    t.string   "gender_name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "locations", :force => true do |t|
-    t.string   "loc_master_id"
-    t.string   "city_id"
-    t.string   "taluk_id"
-    t.string   "district_id"
-    t.string   "state_id"
+    t.integer  "taluk_id"
+    t.integer  "district_id"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.integer  "pincode_id"
     t.string   "country_id"
-    t.string   "pincode_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "martial_stats", :force => true do |t|
+    t.string   "martial_status_type"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  create_table "pincodes", :force => true do |t|
+    t.integer  "pincode"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "posts", :force => true do |t|
     t.string   "name"
     t.string   "title"
     t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "religions", :force => true do |t|
+    t.string   "religion_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "state_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "taluks", :force => true do |t|
+    t.string   "taluk_name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
