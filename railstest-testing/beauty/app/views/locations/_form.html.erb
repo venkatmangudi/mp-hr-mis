@@ -1,10 +1,5 @@
 <%= simple_form_for @location, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :taluk_id %>
-  <%= f.input :district_id %>
-  <%= f.input :city_id %>
-  <%= f.input :state_id %>
-  <%= f.input :pincode_id %>
-  <%= f.input :country_id %>
+  State : <%= collection_select(:state, :id,State.all,:id,:state_name) %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

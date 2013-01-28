@@ -1,4 +1,7 @@
 Beauty::Application.routes.draw do
+  resources :locations
+
+
   resources :religions
 
 
@@ -15,9 +18,6 @@ Beauty::Application.routes.draw do
 
 
   resources :genders
-
-
-  resources :locations
 
 
   resources :pincodes

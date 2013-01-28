@@ -2,16 +2,11 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<table class="table table-striped" id="locations">
+<table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:taluk_id) %></th>
-      <th><%= model_class.human_attribute_name(:district_id) %></th>
-      <th><%= model_class.human_attribute_name(:city_id) %></th>
       <th><%= model_class.human_attribute_name(:state_id) %></th>
-      <th><%= model_class.human_attribute_name(:pincode_id) %></th>
-      <th><%= model_class.human_attribute_name(:country_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -20,12 +15,7 @@
     <% @locations.each do |location| %>
       <tr>
         <td><%= link_to location.id, location_path(location) %></td>
-        <td><%= location.taluk_id %></td>
-        <td><%= location.district_id %></td>
-        <td><%= location.city_id %></td>
         <td><%= location.state_id %></td>
-        <td><%= location.pincode_id %></td>
-        <td><%= location.country_id %></td>
         <td><%=l location.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -44,12 +34,3 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_location_path,
             :class => 'btn btn-primary' %>
-
-<script>
-    $(document).ready(function() {
-      $('#locations').dataTable( {
-        "sPaginationType": "bootstrap"
-      } );
-    }
-  );
-</script>
