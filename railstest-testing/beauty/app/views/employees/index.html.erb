@@ -2,84 +2,15 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<table class="table table-condensed" id="employe">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_no) %></th>
-      <th><%= model_class.human_attribute_name(:emp_new_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_full_name) %></th>
-      <th><%= model_class.human_attribute_name(:emp_fname) %></th>
-      <th><%= model_class.human_attribute_name(:emp_mname) %></th>
-      <th><%= model_class.human_attribute_name(:emp_lname) %></th>
-      <th><%= model_class.human_attribute_name(:emp_fathername) %></th>
-      <th><%= model_class.human_attribute_name(:emp_gender_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_dob) %></th>
-      <th><%= model_class.human_attribute_name(:emp_category_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_religion_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_caste_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_bloodgroup_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_permanent_address) %></th>
-      <th><%= model_class.human_attribute_name(:emp_loc_master_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_phone_no) %></th>
-      <th><%= model_class.human_attribute_name(:emp_mobile_no) %></th>
-      <th><%= model_class.human_attribute_name(:emp_email) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= link_to employee.id, employee_path(employee) %></td>
-        <td><%= employee.emp_id %></td>
-        <td><%= employee.emp_no %></td>
-        <td><%= employee.emp_new_id %></td>
-        <td><%= employee.emp_full_name %></td>
-        <td><%= employee.emp_fname %></td>
-        <td><%= employee.emp_mname %></td>
-        <td><%= employee.emp_lname %></td>
-        <td><%= employee.emp_fathername %></td>
-        <td><%= employee.emp_gender_id %></td>
-        <td><%= employee.emp_dob %></td>
-        <td><%= employee.emp_category_id %></td>
-        <td><%= employee.emp_religion_id %></td>
-        <td><%= employee.emp_caste_id %></td>
-        <td><%= employee.emp_bloodgroup_id %></td>
-        <td><%= employee.emp_permanent_address %></td>
-        <td><%= employee.emp_loc_master_id %></td>
-        <td><%= employee.emp_phone_no %></td>
-        <td><%= employee.emp_mobile_no %></td>
-        <td><%= employee.emp_email %></td>
-        <td><%=l employee.created_at %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_employee_path(employee), :class => 'btn btn-mini' %>
-         
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_employee_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-info' %>
             
-<script>
-  // $(document).ready(function() {
-  //   $('#entry').dataTable();
-  // } );
-    $(document).ready(function() {
-      $('#employe').dataTable( {
-        "sPaginationType": "bootstrap"
-      } );
-    }
-  );
-</script>
 
-<p>Employee Operations.</p>
+<br><br><br>
+<h3>Employee Operations.</h3>
           <div class="bs-docs-example">
             <div class="tabbable tabs-left">
               <ul class="nav nav-tabs">
@@ -100,7 +31,51 @@
               </ul>
               <div class="tab-content">
                 <div class="tab-pane active" id="lA">
-                  <p>I'm in Section A.</p>
+                  <table class="table table-condensed" id="employe">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:emp_id) %></th>
+      <th><%= model_class.human_attribute_name(:emp_no) %></th>
+      <th><%= model_class.human_attribute_name(:emp_new_id) %></th>
+      <th><%= model_class.human_attribute_name(:emp_full_name) %></th>
+      <th><%= model_class.human_attribute_name(:emp_fname) %></th>
+      <th><%= model_class.human_attribute_name(:emp_mname) %></th>
+      <th><%= model_class.human_attribute_name(:emp_lname) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= link_to employee.id, employee_path(employee) %></td>
+        <td><%= employee.emp_id %></td>
+        <td><%= employee.emp_no %></td>
+        <td><%= employee.emp_new_id %></td>
+        <td><%= employee.emp_full_name %></td>
+        <td><%= employee.emp_fname %></td>
+        <td><%= employee.emp_mname %></td>
+        <td><%= employee.emp_lname %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_employee_path(employee), :class => 'btn btn-mini' %>
+         
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<script>
+  // $(document).ready(function() {
+  //   $('#entry').dataTable();
+  // } );
+    $(document).ready(function() {
+      $('#employe').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>
                 </div>
                 <div class="tab-pane" id="lB">
                   <p>Howdy, I'm in Section B.</p>
