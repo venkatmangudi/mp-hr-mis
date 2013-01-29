@@ -12,6 +12,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+      <div class="container">
+      <header class="hero-unit">
+        <h1>
+            <strong>Welcome To HRMIS</strong><br>
+            <small>A Medical Central Management System</small>
+        </h1>
+      </header>
+      </div>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -57,6 +65,9 @@
                     <li><a href="/employees/new" data-method="get">Add Employee</a></li>
                     <li><%= link_to "View Employees", cities_path %></li>
                     <li><%= link_to "Employee Education", emp_edus_path %></li>
+
+                    <li class="divider"></li>
+                    <li><%= link_to "Healthcare Centers", emp_adds_path %></li>
 
                     <li class="divider"></li>
                     <li><%= link_to "Institutions", emp_adds_path %></li>
