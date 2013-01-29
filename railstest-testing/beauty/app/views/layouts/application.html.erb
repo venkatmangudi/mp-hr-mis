@@ -12,19 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-      <div class="hero-unit">
-      <div class="container">
 
-       
-              <div id="mp_logo">
-                  <h1>
-                    <strong>Welcome To HRMIS</strong><br>
-                  <small>Bhopal Medical Information Management System</small>
-                </h1>
-            </div>            
-        
-      </div>
-</div>
+
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -44,7 +33,7 @@
                 <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Employees <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                     <li><a href="/employees/new" data-method="get">Add Employee</a></li>
-                    <li><%= link_to "View Employees", cities_path %></li>
+                    <li><%= link_to "View Employees", employees_path %></li>
                     <li><%= link_to "Employee Education", emp_edus_path %></li>
                     <li><%= link_to "Additional Info", emp_adds_path %></li>
 
@@ -68,7 +57,7 @@
                 <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Masters <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                     <li><a href="/employees/new" data-method="get">Add Employee</a></li>
-                    <li><%= link_to "View Employees", cities_path %></li>
+                    <li><%= link_to "View Employees", employees_path %></li>
                     <li><%= link_to "Employee Education", emp_edus_path %></li>
 
                     <li class="divider"></li>

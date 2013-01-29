@@ -32,50 +32,50 @@
               <div class="tab-content">
                 <div class="tab-pane active" id="lA">
                   <table class="table table-condensed" id="employe">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_no) %></th>
-      <th><%= model_class.human_attribute_name(:emp_new_id) %></th>
-      <th><%= model_class.human_attribute_name(:emp_full_name) %></th>
-      <th><%= model_class.human_attribute_name(:emp_fname) %></th>
-      <th><%= model_class.human_attribute_name(:emp_mname) %></th>
-      <th><%= model_class.human_attribute_name(:emp_lname) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= link_to employee.id, employee_path(employee) %></td>
-        <td><%= employee.emp_id %></td>
-        <td><%= employee.emp_no %></td>
-        <td><%= employee.emp_new_id %></td>
-        <td><%= employee.emp_full_name %></td>
-        <td><%= employee.emp_fname %></td>
-        <td><%= employee.emp_mname %></td>
-        <td><%= employee.emp_lname %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_employee_path(employee), :class => 'btn btn-mini' %>
-         
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<script>
-  // $(document).ready(function() {
-  //   $('#entry').dataTable();
-  // } );
-    $(document).ready(function() {
-      $('#employe').dataTable( {
-        "sPaginationType": "bootstrap"
-      } );
-    }
-  );
-</script>
+                    <thead>
+                      <tr>
+                        <th><%= model_class.human_attribute_name(:id) %></th>
+                        <th><%= model_class.human_attribute_name(:emp_id) %></th>
+                        <th><%= model_class.human_attribute_name(:emp_no) %></th>
+                        <th><%= model_class.human_attribute_name(:emp_new_id) %></th>
+                        <th><%= model_class.human_attribute_name(:emp_full_name) %></th>
+                        <th><%= model_class.human_attribute_name(:emp_fname) %></th>
+                        <th><%= model_class.human_attribute_name(:emp_mname) %></th>
+                        <th><%= model_class.human_attribute_name(:emp_lname) %></th>
+                        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @employees.each do |employee| %>
+                        <tr>
+                          <td><%= link_to employee.id, employee_path(employee) %></td>
+                          <td><%= employee.emp_id %></td>
+                          <td><%= employee.emp_no %></td>
+                          <td><%= employee.emp_new_id %></td>
+                          <td><%= employee.emp_full_name %></td>
+                          <td><%= employee.emp_fname %></td>
+                          <td><%= employee.emp_mname %></td>
+                          <td><%= employee.emp_lname %></td>
+                          <td>
+                            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                                        edit_employee_path(employee), :class => 'btn btn-mini' %>
+                           
+                          </td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                  <script>
+                    // $(document).ready(function() {
+                    //   $('#entry').dataTable();
+                    // } );
+                      $(document).ready(function() {
+                        $('#employe').dataTable( {
+                          "sPaginationType": "bootstrap"
+                        } );
+                      }
+                    );
+                  </script>
                 </div>
                 <div class="tab-pane" id="lB">
                   <p>Howdy, I'm in Section B.</p>
