@@ -18,7 +18,7 @@
                 <li><a href="#lB" data-toggle="tab">Address Details</a></li>
                 <li><a href="#lC" data-toggle="tab">Postings History</a></li>
                 <li><a href="#lB" data-toggle="tab">Qualifications</a></li>
-                <li><a href="#lC" data-toggle="tab">Dependents</a></li>                
+                <li><a href="#lD" data-toggle="tab">Dependents</a></li>                
                 <li><a href="#lB" data-toggle="tab">Additional Details</a></li>
                 <li><a href="#lC" data-toggle="tab">Achievements</a></li>                
                 <li><a href="#lB" data-toggle="tab">Training</a></li>
@@ -77,8 +77,44 @@
                     );
                   </script>
                 </div>
-                <div class="tab-pane" id="lB">
-                  <p>Howdy, I'm in Section B.</p>
+                <div class="tab-pane" id="lD">
+                  <table class="table table-condensed" id="employes">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:emp_id) %></th>
+      <th><%= model_class.human_attribute_name(:emp_no) %></th>
+<th><%= model_class.human_attribute_name(:emp_fathername) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= link_to employee.id, employee_path(employee) %></td>
+        <td><%= employee.emp_id %></td>
+        <td><%= employee.emp_no %></td>
+        <td><%= employee.emp_fathername %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_employee_path(employee), :class => 'btn btn-mini' %>
+         
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<script>
+  // $(document).ready(function() {
+  //   $('#entry').dataTable();
+  // } );
+    $(document).ready(function() {
+      $('#employes').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>
                 </div>
                 <div class="tab-pane" id="lC">
                   <p>What up girl, this is Section C.</p>
