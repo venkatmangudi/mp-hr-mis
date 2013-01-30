@@ -15,7 +15,7 @@
     <% @locations.each do |location| %>
       <tr>
         <td><%= link_to location.id, location_path(location) %></td>
-        <td><%= location.state_id %></td>
+        <td><%= location.state.state_name %></td>
         <td><%=l location.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
