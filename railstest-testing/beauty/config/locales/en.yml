@@ -3,3 +3,7 @@
 
 en:
   hello: "Hello world"
+  errors:
+    messages:
+      blank: "रिक्त नहीं किया जा सकता है/can't be blank"
+      taken: "अद्वितीय होना चाहिए/Data Already Exists"
