@@ -3,4 +3,6 @@ class Relation < ActiveRecord::Base
 
   validates_uniqueness_of(:Relation_name)
   validates_presence_of(:Relation_name)
+
+  has_many:dependents
 end
