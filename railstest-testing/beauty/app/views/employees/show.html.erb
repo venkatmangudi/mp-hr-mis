@@ -1,5 +1,4 @@
 <h3>Employee Details for <%= @employee.emp_full_name %></h3><br><br>
-
           <div class="bs-docs-example">
             <div class="tabbable tabs-left">
               <ul class="nav nav-tabs">
@@ -21,7 +20,7 @@
               <div class="tab-content">
                 <div class="tab-pane active" id="lA">
                   <%- model_class = Employee -%>
-<dl class="table table-bordered">
+<dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:emp_id) %>:</strong></dt>
   <dd><%= @employee.emp_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:emp_no) %>:</strong></dt>
