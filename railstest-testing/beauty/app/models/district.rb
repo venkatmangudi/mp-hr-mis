@@ -1,4 +1,7 @@
 class District < ActiveRecord::Base
   attr_accessible :district_name
-  belongs_to :location
+
+  has_many:institution_masters
+  validates_uniqueness_of(:district_name)
+  validates_presence_of(:district_name)
 end

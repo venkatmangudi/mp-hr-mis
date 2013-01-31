@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130130121618) do
+ActiveRecord::Schema.define(:version => 20130131073358) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -76,13 +76,6 @@ ActiveRecord::Schema.define(:version => 20130130121618) do
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "dropthings", :force => true do |t|
-    t.integer  "state_id"
-    t.string   "state_name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "emp_adds", :force => true do |t|
     t.string   "emp_id"
     t.string   "emp_martial_status_id"
@@ -138,6 +131,23 @@ ActiveRecord::Schema.define(:version => 20130130121618) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "institution_masters", :force => true do |t|
+    t.integer  "pincode_id"
+    t.string   "Institution_Name"
+    t.integer  "Institution_type_id"
+    t.integer  "Special_Cadre_id"
+    t.integer  "district_id"
+    t.integer  "Beds"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  create_table "institution_types", :force => true do |t|
+    t.string   "Institution_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "locations", :force => true do |t|
     t.integer  "state_id"
     t.datetime "created_at", :null => false
@@ -168,6 +178,12 @@ ActiveRecord::Schema.define(:version => 20130130121618) do
     t.string   "religion_name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "special_cadres", :force => true do |t|
+    t.string   "Special_Cadre_Type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "states", :force => true do |t|
