@@ -6,7 +6,7 @@ class InstitutionMaster < ActiveRecord::Base
   belongs_to:Special_Cadre
   belongs_to:district
 
-  
+  has_many:postings
   validates_presence_of(:pincode_id)
   validates_presence_of(:Institution_Name)
   validates_uniqueness_of(:Institution_Name)

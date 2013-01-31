@@ -1,0 +1,13 @@
+<%= simple_form_for @posting, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false %>
+    <%= f.association :institution_master,label_method: :Institution_Name, value_method: :id, include_blank: false %>
+    <%= f.association :designation,label_method: :Designation_English, value_method: :id, include_blank: false %>
+  <%= f.input :posting_from %>
+  <%= f.input :posting_to %>
+  <%= f.input :payscale %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                postings_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,4 +1,7 @@
 Beauty::Application.routes.draw do
+  resources :postings
+
+
   resources :designations
 
 

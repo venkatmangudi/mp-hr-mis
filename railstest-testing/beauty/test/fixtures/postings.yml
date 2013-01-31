@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee_id: 1
+  institution_master_id: 1
+  designation_id: 1
+  posting_from: 2013-01-31
+  posting_to: 2013-01-31
+  payscale: MyString
+
+two:
+  employee_id: 1
+  institution_master_id: 1
+  designation_id: 1
+  posting_from: 2013-01-31
+  posting_to: 2013-01-31
+  payscale: MyString
