@@ -1,4 +1,10 @@
 Beauty::Application.routes.draw do
+  resources :statuses
+
+
+  resources :relations
+
+
   resources :postings
 
 
