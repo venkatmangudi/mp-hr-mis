@@ -1,5 +1,5 @@
 Beauty::Application.routes.draw do
-  resources :institution_masters
+  resources :designations
 
 
   resources :institution_types

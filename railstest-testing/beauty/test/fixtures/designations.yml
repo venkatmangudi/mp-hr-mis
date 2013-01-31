@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Designation_Hindi: MyString
+  Designation_English: MyString
+  class_no: MyString
+
+two:
+  Designation_Hindi: MyString
+  Designation_English: MyString
+  class_no: MyString
