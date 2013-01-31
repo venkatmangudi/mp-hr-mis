@@ -1,4 +1,7 @@
 Beauty::Application.routes.draw do
+  resources :qualifications
+
+
   resources :universities
 
 
