@@ -1,4 +1,16 @@
 Beauty::Application.routes.draw do
+  resources :universities
+
+
+  resources :specialisations
+
+
+  resources :qualification_names
+
+
+  resources :qualification_types
+
+
   resources :dependents
 
 

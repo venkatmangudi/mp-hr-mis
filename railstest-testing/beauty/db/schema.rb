@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130131173351) do
+ActiveRecord::Schema.define(:version => 20130131200948) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -203,6 +203,18 @@ ActiveRecord::Schema.define(:version => 20130131173351) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "qualification_names", :force => true do |t|
+    t.string   "Qualification_name"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "qualification_types", :force => true do |t|
+    t.string   "Qualification_type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
   create_table "relations", :force => true do |t|
     t.string   "Relation_name"
     t.datetime "created_at",    :null => false
@@ -219,6 +231,12 @@ ActiveRecord::Schema.define(:version => 20130131173351) do
     t.string   "Special_Cadre_Type"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "specialisations", :force => true do |t|
+    t.string   "Specialisation_name"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "states", :force => true do |t|
@@ -243,6 +261,12 @@ ActiveRecord::Schema.define(:version => 20130131173351) do
     t.string   "state_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "universities", :force => true do |t|
+    t.string   "University_name"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
