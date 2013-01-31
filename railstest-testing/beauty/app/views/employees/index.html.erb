@@ -2,89 +2,16 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_employee_path,
-            :class => 'btn btn-large btn-info' %>
-            
-
-<br><br><br>
-<h3>Employee Operations.</h3>
-          <div class="bs-docs-example">
-            <div class="tabbable tabs-left">
-              <ul class="nav nav-tabs">
-                <li class="active"><a href="#lA" data-toggle="tab">Primary Details</a></li>
-                <li><a href="#lB" data-toggle="tab">Address Details</a></li>
-                <li><a href="#lC" data-toggle="tab">Postings History</a></li>
-                <li><a href="#lB" data-toggle="tab">Qualifications</a></li>
-                <li><a href="#lD" data-toggle="tab">Dependents</a></li>                
-                <li><a href="#lB" data-toggle="tab">Additional Details</a></li>
-                <li><a href="#lC" data-toggle="tab">Achievements</a></li>                
-                <li><a href="#lB" data-toggle="tab">Training</a></li>
-                <li><a href="#lC" data-toggle="tab">Promotions</a></li>                
-                <li><a href="#lB" data-toggle="tab">Showcause</a></li>
-                <li><a href="#lC" data-toggle="tab">Enquiries</a></li>                
-                <li><a href="#lB" data-toggle="tab">Penalties</a></li>
-                <li><a href="#lC" data-toggle="tab">Leaves</a></li>
-                <li><a href="#lC" data-toggle="tab">Salary And Bills</a></li>
-              </ul>
-              <div class="tab-content">
-                <div class="tab-pane active" id="lA">
-                  <table class="table table-condensed" id="employe">
-                    <thead>
-                      <tr>
-                        <th><%= model_class.human_attribute_name(:id) %></th>
-                        <th><%= model_class.human_attribute_name(:emp_id) %></th>
-                        <th><%= model_class.human_attribute_name(:emp_no) %></th>
-                        <th><%= model_class.human_attribute_name(:emp_new_id) %></th>
-                        <th><%= model_class.human_attribute_name(:emp_full_name) %></th>
-                        <th><%= model_class.human_attribute_name(:emp_fname) %></th>
-                        <th><%= model_class.human_attribute_name(:emp_mname) %></th>
-                        <th><%= model_class.human_attribute_name(:emp_lname) %></th>
-                        <th><%=t '.actions', :default => t("helpers.actions") %></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <% @employees.each do |employee| %>
-                        <tr>
-                          <td><%= link_to employee.id, employee_path(employee) %></td>
-                          <td><%= employee.emp_id %></td>
-                          <td><%= employee.emp_no %></td>
-                          <td><%= employee.emp_new_id %></td>
-                          <td><%= employee.emp_full_name %></td>
-                          <td><%= employee.emp_fname %></td>
-                          <td><%= employee.emp_mname %></td>
-                          <td><%= employee.emp_lname %></td>
-                          <td>
-                            <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                                        edit_employee_path(employee), :class => 'btn btn-mini' %>
-                           
-                          </td>
-                        </tr>
-                      <% end %>
-                    </tbody>
-                  </table>
-                  <script>
-                    // $(document).ready(function() {
-                    //   $('#entry').dataTable();
-                    // } );
-                      $(document).ready(function() {
-                        $('#employe').dataTable( {
-                          "sPaginationType": "bootstrap"
-                        } );
-                      }
-                    );
-                  </script>
-                </div>
-                <div class="tab-pane" id="lD">
-                  <table class="table table-condensed" id="employes">
+<table class="table table-bordered" id="employe">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:emp_id) %></th>
       <th><%= model_class.human_attribute_name(:emp_no) %></th>
-<th><%= model_class.human_attribute_name(:emp_fathername) %></th>
+      <th><%= model_class.human_attribute_name(:emp_new_id) %></th>
+      <th><%= model_class.human_attribute_name(:emp_full_name) %></th>
+
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -94,31 +21,36 @@
         <td><%= link_to employee.id, employee_path(employee) %></td>
         <td><%= employee.emp_id %></td>
         <td><%= employee.emp_no %></td>
-        <td><%= employee.emp_fathername %></td>
+        <td><%= employee.emp_new_id %></td>
+        <td><%= employee.emp_full_name %></td>
+
+        <td><%=l employee.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_employee_path(employee), :class => 'btn btn-mini' %>
-         
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      employee_path(employee),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_employee_path,
+            :class => 'btn btn-primary' %>
+            
 <script>
   // $(document).ready(function() {
   //   $('#entry').dataTable();
   // } );
     $(document).ready(function() {
-      $('#employes').dataTable( {
+      $('#employe').dataTable( {
         "sPaginationType": "bootstrap"
       } );
     }
   );
 </script>
-                </div>
-                <div class="tab-pane" id="lC">
-                  <p>What up girl, this is Section C.</p>
-                </div>
-              </div>
-            </div> <!-- /tabbable -->
-          </div>

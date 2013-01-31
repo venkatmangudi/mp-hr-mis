@@ -56,12 +56,40 @@
               :class => 'btn btn-danger' %>
 </div>
 
-<%- model_class = Posting -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
 
-<table class="table table-striped" id="postings">
+
+
+
+
+
+          <div class="bs-docs-example">
+            <div class="tabbable tabs-left">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#lA" data-toggle="tab">Primary Details</a></li>
+                <li><a href="#lB" data-toggle="tab">Address Details</a></li>
+                <li><a href="#lC" data-toggle="tab">Postings History</a></li>
+                <li><a href="#lB" data-toggle="tab">Qualifications</a></li>
+                <li><a href="#lD" data-toggle="tab">Dependents</a></li>                
+                <li><a href="#lB" data-toggle="tab">Additional Details</a></li>
+                <li><a href="#lC" data-toggle="tab">Achievements</a></li>                
+                <li><a href="#lB" data-toggle="tab">Training</a></li>
+                <li><a href="#lC" data-toggle="tab">Promotions</a></li>                
+                <li><a href="#lB" data-toggle="tab">Showcause</a></li>
+                <li><a href="#lC" data-toggle="tab">Enquiries</a></li>                
+                <li><a href="#lB" data-toggle="tab">Penalties</a></li>
+                <li><a href="#lC" data-toggle="tab">Leaves</a></li>
+                <li><a href="#lC" data-toggle="tab">Salary And Bills</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="lA">
+                  <p>Howdy, I'm in Section A.</p>
+                </div>
+                <div class="tab-pane" id="lB">
+                  <p>Howdy, I'm in Section B.</p>
+                </div>
+                <div class="tab-pane" id="lC">
+                  <%- model_class = Posting -%>
+<table class="table table-bordered" id="postings">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -100,12 +128,11 @@
     <% end %>
   </tbody>
 </table>
+                </div>
+                                <div class="tab-pane" id="lD">
+                  <%- model_class = Dependent -%>
 
-<%- model_class = Dependent -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
-<table class="table table-striped" id="dependents">
+<table class="table table-bordered" id="dependents">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -139,4 +166,7 @@
     <% end %>
   </tbody>
 </table>
-
+                </div>
+              </div>
+            </div> <!-- /tabbable -->
+          </div>
