@@ -1,4 +1,10 @@
 Beauty::Application.routes.draw do
+  resources :institution_types
+
+
+  resources :special_cadres
+
+
   resources :tempus
 
 
