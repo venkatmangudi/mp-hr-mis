@@ -13,6 +13,7 @@ gem 'country_select'
 gem 'jquery-datatables-rails'
 gem 'formtastic'
 gem 'jquery-ui-bootstrap-rails'
+gem 'bootstrap-editable-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
