@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require autocomplete-rails
 //= require twitter/bootstrap
 //= require bootstrap-editable
-//= require bootstrap-editable-rails
 //= require_tree .
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
