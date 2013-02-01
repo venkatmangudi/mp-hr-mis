@@ -61,13 +61,24 @@
               <li class="dropdown">
                 <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Masters <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                    <li><a href="/employees/new" data-method="get">Add Employee</a></li>
-                    <li><%= link_to "View Employees", employees_path %></li>
+
+                      <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Employees</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="/employees/new" data-method="get">Add Employee</a></li>
+                          <li><%= link_to "View Employees", employees_path %></li>
+                          <li class="divider"></li>
+                          <li><%= link_to "Postings", postings_path %></li>
+                          <li><%= link_to "Qualifications", qualifications_path %></li>
+                          <li><%= link_to "Dependents", dependents_path %></li>
+                        </ul>
+                      </li>
 
                     <li class="divider"></li>
                     <li><%= link_to "Healthcare Centers", emp_adds_path %></li>
+                    <li class="divider"></li>
 
-                     <li class="divider"></li>
+
                       <li class="dropdown-submenu">
                         <a tabindex="-1" href="#">Institutions</a>
                         <ul class="dropdown-menu">
