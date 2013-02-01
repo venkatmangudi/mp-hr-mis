@@ -15,6 +15,7 @@ gem 'formtastic'
 gem 'jquery-ui-bootstrap-rails'
 gem 'bootstrap-x-editable-rails'
 gem 'rails3-jquery-autocomplete'
+gem 'best_in_place'
 
 #gem 'bootstrap-editable-rails'
 

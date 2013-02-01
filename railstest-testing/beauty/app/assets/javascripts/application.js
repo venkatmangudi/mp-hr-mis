@@ -12,10 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
-//= require autocomplete-rails
 //= require twitter/bootstrap
-//= require bootstrap-editable
 //= require_tree .
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
@@ -26,3 +23,7 @@
 //= require twitter/bootstrap/bootstrap-collapse
 //= require bootstrap-modal
 //= require bootstrap-modalmanager
+
+//= require jquery.purr
+//= require best_in_place
+//= require best_in_place.purr
