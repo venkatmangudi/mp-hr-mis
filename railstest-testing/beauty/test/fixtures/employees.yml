@@ -11,10 +11,10 @@ one:
   emp_fathername: MyString
   gender_id: MyString
   emp_dob: 2013-01-23 13:02:41
-  emp_category_id: MyString
-  emp_religion_id: MyString
-  emp_caste_id: MyString
-  emp_bloodgroup_id: MyString
+  category_id: MyString
+  religion_id: MyString
+  caste_id: MyString
+  blood_group_id: MyString
   emp_permanent_address: MyString
   emp_loc_master_id: MyString
   emp_phone_no: MyString
@@ -32,10 +32,10 @@ two:
   emp_fathername: MyString
   gender_id: MyString
   emp_dob: 2013-01-23 13:02:41
-  emp_category_id: MyString
-  emp_religion_id: MyString
-  emp_caste_id: MyString
-  emp_bloodgroup_id: MyString
+  category_id: MyString
+  religion_id: MyString
+  caste_id: MyString
+  blood_group_id: MyString
   emp_permanent_address: MyString
   emp_loc_master_id: MyString
   emp_phone_no: MyString

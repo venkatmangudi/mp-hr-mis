@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130204063637) do
+ActiveRecord::Schema.define(:version => 20130204093301) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -121,19 +121,17 @@ ActiveRecord::Schema.define(:version => 20130204063637) do
 
   create_table "employees", :force => true do |t|
     t.string   "emp_id"
-    t.string   "emp_no"
-    t.string   "emp_new_id"
     t.string   "emp_full_name"
     t.string   "emp_fname"
     t.string   "emp_mname"
     t.string   "emp_lname"
     t.string   "emp_fathername"
     t.integer  "gender_id"
-    t.datetime "emp_dob"
-    t.string   "emp_category_id"
-    t.string   "emp_religion_id"
-    t.string   "emp_caste_id"
-    t.string   "emp_bloodgroup_id"
+    t.date     "emp_dob"
+    t.integer  "category_id"
+    t.integer  "religion_id"
+    t.integer  "caste_id"
+    t.integer  "blood_group_id"
     t.string   "emp_permanent_address"
     t.string   "emp_loc_master_id"
     t.string   "emp_phone_no"

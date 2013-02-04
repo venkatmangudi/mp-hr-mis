@@ -1,4 +1,6 @@
 class Religion < ActiveRecord::Base
   attr_accessible :religion_name
-  validates_uniqueness_of(:religion_name, :message => "There is already a Religion with that name")
+  validates_uniqueness_of(:religion_name)
+
+  has_many:employees
 end

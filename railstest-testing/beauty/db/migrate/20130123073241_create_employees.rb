@@ -11,10 +11,10 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :emp_fathername
       t.string :gender_id
       t.datetime :emp_dob
-      t.string :emp_category_id
-      t.string :emp_religion_id
-      t.string :emp_caste_id
-      t.string :emp_bloodgroup_id
+      t.string :category_id
+      t.string :religion_id
+      t.string :caste_id
+      t.string :blood_group_id
       t.string :emp_permanent_address
       t.string :emp_loc_master_id
       t.string :emp_phone_no

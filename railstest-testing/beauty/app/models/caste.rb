@@ -1,4 +1,6 @@
 class Caste < ActiveRecord::Base
   attr_accessible :caste_name
-  validates_uniqueness_of(:caste_name, :message => "There is already a Caste with that name")
+  validates_uniqueness_of(:caste_name)
+
+  has_many:employees
 end
