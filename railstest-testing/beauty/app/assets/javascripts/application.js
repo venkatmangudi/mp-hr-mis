@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
-//= require dataTables/jquery.dataTables
-//= require dataTables/jquery.dataTables.bootstrap
 //= require twitter/bootstrap/bootstrap-transition
 //= require twitter/bootstrap/bootstrap-alert
 //= require twitter/bootstrap/bootstrap-modal
@@ -27,3 +25,7 @@
 //= require jquery.purr
 //= require best_in_place
 //= require best_in_place.purr
+
+
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap
