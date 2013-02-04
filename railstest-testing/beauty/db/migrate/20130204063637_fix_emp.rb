@@ -1,7 +1,6 @@
 class FixEmp < ActiveRecord::Migration
-  def up
-  end
-
-  def down
-  end
+	def change
+    	rename_column :employees, :gender_id, :gender_id
+    	change_column :employees, :gender_id, :integer
+  	end
 end

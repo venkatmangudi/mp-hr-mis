@@ -18,7 +18,7 @@ class EmployeesControllerTest < ActionController::TestCase
 
   test "should create employee" do
     assert_difference('Employee.count') do
-      post :create, employee: { emp_bloodgroup_id: @employee.emp_bloodgroup_id, emp_caste_id: @employee.emp_caste_id, emp_category_id: @employee.emp_category_id, emp_dob: @employee.emp_dob, emp_email: @employee.emp_email, emp_fathername: @employee.emp_fathername, emp_fname: @employee.emp_fname, emp_full_name: @employee.emp_full_name, emp_gender_id: @employee.emp_gender_id, emp_id: @employee.emp_id, emp_lname: @employee.emp_lname, emp_loc_master_id: @employee.emp_loc_master_id, emp_mname: @employee.emp_mname, emp_mobile_no: @employee.emp_mobile_no, emp_new_id: @employee.emp_new_id, emp_no: @employee.emp_no, emp_permanent_address: @employee.emp_permanent_address, emp_phone_no: @employee.emp_phone_no, emp_religion_id: @employee.emp_religion_id }
+      post :create, employee: { emp_bloodgroup_id: @employee.emp_bloodgroup_id, emp_caste_id: @employee.emp_caste_id, emp_category_id: @employee.emp_category_id, emp_dob: @employee.emp_dob, emp_email: @employee.emp_email, emp_fathername: @employee.emp_fathername, emp_fname: @employee.emp_fname, emp_full_name: @employee.emp_full_name, gender_id: @employee.gender_id, emp_id: @employee.emp_id, emp_lname: @employee.emp_lname, emp_loc_master_id: @employee.emp_loc_master_id, emp_mname: @employee.emp_mname, emp_mobile_no: @employee.emp_mobile_no, emp_new_id: @employee.emp_new_id, emp_no: @employee.emp_no, emp_permanent_address: @employee.emp_permanent_address, emp_phone_no: @employee.emp_phone_no, emp_religion_id: @employee.emp_religion_id }
     end
 
     assert_redirected_to employee_path(assigns(:employee))
@@ -35,7 +35,7 @@ class EmployeesControllerTest < ActionController::TestCase
   end
 
   test "should update employee" do
-    put :update, id: @employee, employee: { emp_bloodgroup_id: @employee.emp_bloodgroup_id, emp_caste_id: @employee.emp_caste_id, emp_category_id: @employee.emp_category_id, emp_dob: @employee.emp_dob, emp_email: @employee.emp_email, emp_fathername: @employee.emp_fathername, emp_fname: @employee.emp_fname, emp_full_name: @employee.emp_full_name, emp_gender_id: @employee.emp_gender_id, emp_id: @employee.emp_id, emp_lname: @employee.emp_lname, emp_loc_master_id: @employee.emp_loc_master_id, emp_mname: @employee.emp_mname, emp_mobile_no: @employee.emp_mobile_no, emp_new_id: @employee.emp_new_id, emp_no: @employee.emp_no, emp_permanent_address: @employee.emp_permanent_address, emp_phone_no: @employee.emp_phone_no, emp_religion_id: @employee.emp_religion_id }
+    put :update, id: @employee, employee: { emp_bloodgroup_id: @employee.emp_bloodgroup_id, emp_caste_id: @employee.emp_caste_id, emp_category_id: @employee.emp_category_id, emp_dob: @employee.emp_dob, emp_email: @employee.emp_email, emp_fathername: @employee.emp_fathername, emp_fname: @employee.emp_fname, emp_full_name: @employee.emp_full_name, gender_id: @employee.gender_id, emp_id: @employee.emp_id, emp_lname: @employee.emp_lname, emp_loc_master_id: @employee.emp_loc_master_id, emp_mname: @employee.emp_mname, emp_mobile_no: @employee.emp_mobile_no, emp_new_id: @employee.emp_new_id, emp_no: @employee.emp_no, emp_permanent_address: @employee.emp_permanent_address, emp_phone_no: @employee.emp_phone_no, emp_religion_id: @employee.emp_religion_id }
     assert_redirected_to employee_path(assigns(:employee))
   end
 

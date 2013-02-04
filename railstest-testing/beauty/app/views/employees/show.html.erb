@@ -56,11 +56,11 @@
     </tr>
     <tr>
         <td>Father Name</td>
-        <td><%= best_in_place @employee, :emp_fathername %></td>                          
+        <td><%=@employee.emp_fathername%></td>                          
     </tr>
     <tr>
         <td>Gender</td>
-        <td><%=@employee.emp_gender_id %></td>                          
+        <td><%=@employee.gender.gender_name%></td>                          
     </tr>
     <tr>
         <td>Dob</td>
@@ -103,7 +103,7 @@
 </table>
 </div>
 </div>
-                <div class="tab-pane" id="lB">
+ <div class="tab-pane" id="lB">
 <%- model_class = Qualification -%>
 <table class="table table-bordered" id="qualifications">
   <thead>
@@ -211,6 +211,7 @@
   </tbody>
 </table>
                 </div>
+               
                                 <div class="tab-pane" id="lE">
                   <p>Howdy, I'm in Section B.</p>
                 </div>

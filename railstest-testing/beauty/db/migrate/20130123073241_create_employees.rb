@@ -9,7 +9,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :emp_mname
       t.string :emp_lname
       t.string :emp_fathername
-      t.string :emp_gender_id
+      t.string :gender_id
       t.datetime :emp_dob
       t.string :emp_category_id
       t.string :emp_religion_id

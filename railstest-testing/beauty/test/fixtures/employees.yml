@@ -9,7 +9,7 @@ one:
   emp_mname: MyString
   emp_lname: MyString
   emp_fathername: MyString
-  emp_gender_id: MyString
+  gender_id: MyString
   emp_dob: 2013-01-23 13:02:41
   emp_category_id: MyString
   emp_religion_id: MyString
@@ -30,7 +30,7 @@ two:
   emp_mname: MyString
   emp_lname: MyString
   emp_fathername: MyString
-  emp_gender_id: MyString
+  gender_id: MyString
   emp_dob: 2013-01-23 13:02:41
   emp_category_id: MyString
   emp_religion_id: MyString

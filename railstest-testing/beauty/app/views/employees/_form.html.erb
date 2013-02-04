@@ -7,7 +7,7 @@
   <%= f.input :emp_mname %>
   <%= f.input :emp_lname %>
   <%= f.input :emp_fathername %>
-  <%= f.input :emp_gender_id %>
+  <%= f.association :gender,label_method: :gender_name, value_method: :id, include_blank: false %>
   <%= f.input :emp_dob %>
   <%= f.input :emp_category_id %>
   <%= f.input :emp_religion_id %>
