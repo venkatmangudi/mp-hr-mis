@@ -1,3 +1,6 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="http://cdn.webrupee.com/font">
+
 <h3>Employee Details for <%= @employee.emp_full_name %></h3><br><br>
           <div class="bs-docs-example">
             <div class="tabbable tabs-left">
@@ -112,7 +115,7 @@
       <th><%= model_class.human_attribute_name(:year) %></th>
       <th><%= model_class.human_attribute_name(:university_id) %></th>
       <th><%= model_class.human_attribute_name(:Remarks) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -126,15 +129,11 @@
         <td><%= qualification.year %></td>
         <td><%= qualification.university.University_name %></td>
         <td><%= qualification.Remarks %></td>
-        <td><%=l qualification.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_qualification_path(qualification), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      qualification_path(qualification),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+
         </td>
       </tr>
     <% end %>
@@ -154,7 +153,7 @@
       <th><%= model_class.human_attribute_name(:posting_from) %></th>
       <th><%= model_class.human_attribute_name(:posting_to) %></th>
       <th><%= model_class.human_attribute_name(:payscale) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -167,16 +166,11 @@
         <td><%= posting.designation.Designation_Hindi %></td>
         <td><%= posting.posting_from %></td>
         <td><%= posting.posting_to %></td>
-        <td><%= posting.payscale %></td>
-        <td><%=l posting.created_at %></td>
+        <td><%= posting.payscale %><span class="WebRupee">  Rs.</span></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_posting_path(posting), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      posting_path(posting),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+
         </td>
       </tr>
     <% end %>
@@ -194,7 +188,7 @@
       <th><%= model_class.human_attribute_name(:relation_id) %></th>
       <th><%= model_class.human_attribute_name(:Birthdate) %></th>
       <th><%= model_class.human_attribute_name(:status_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -206,15 +200,11 @@
         <td><%= dependent.relation.Relation_name %></td>
         <td><%= dependent.Birthdate %></td>
         <td><%= dependent.status.Status_name %></td>
-        <td><%=l dependent.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_dependent_path(dependent), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      dependent_path(dependent),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+
         </td>
       </tr>
     <% end %>
@@ -237,11 +227,7 @@ $('.best_in_place').bind("ajax:success", function(){$(this).closest('tr').effect
               employees_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_employee_path(@employee), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              employee_path(@employee),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+
 </div>          
 
 <script>
