@@ -1,5 +1,8 @@
 class Taluk < ActiveRecord::Base
   attr_accessible :taluk_name
-  belongs_to :location
-  validates_uniqueness_of(:taluk_name, :message => "There is already a Taluk with that name")
+ 
+  has_many:locations
+
+  validates_uniqueness_of(:taluk_name)
+  validates_presence_of(:taluk_name)
 end
