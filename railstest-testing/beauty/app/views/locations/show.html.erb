@@ -4,9 +4,17 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @location.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
+  <dd><%= @location.latitude %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
+  <dd><%= @location.longitude %></dd>
   <dt><strong><%= model_class.human_attribute_name(:state_id) %>:</strong></dt>
   <dd><%= @location.state.state_name %></dd>
 </dl>
+
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?size=600x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

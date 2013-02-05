@@ -14,5 +14,4 @@ class InstitutionMaster < ActiveRecord::Base
   validates_presence_of(:Institution_type_id)
   validates_presence_of(:district_id)
   validates_presence_of(:Beds)
-  validates_uniqueness_of(:pincode_id)
 end
