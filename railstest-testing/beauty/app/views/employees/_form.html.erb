@@ -12,7 +12,7 @@
   <%= f.association :religion,label_method: :religion_name, value_method: :id, include_blank: false %>
   <%= f.association :caste,label_method: :caste_name, value_method: :id, include_blank: false %>
   <%= f.association :blood_group,label_method: :blood_group_type, value_method: :id, include_blank: false %>
-  
+
   <%= f.input :emp_permanent_address %>
   <%= f.input :emp_loc_master_id %>
   <%= f.input :emp_phone_no %>
@@ -24,4 +24,3 @@
                 employees_path, :class => 'btn' %>              
   </div>
 <% end %>
-

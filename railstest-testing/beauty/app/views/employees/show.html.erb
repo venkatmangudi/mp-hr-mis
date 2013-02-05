@@ -114,6 +114,7 @@
     <% end %>
   </tbody>
 </table>
+<%= link_to "Add A New Qualification for this Employee", new_qualification_url(:id => @employee.id) %>
                 </div>
                 <div class="tab-pane" id="lC">
                   <%- model_class = Posting -%>
