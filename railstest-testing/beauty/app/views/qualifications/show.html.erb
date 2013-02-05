@@ -22,7 +22,7 @@
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              qualifications_path, :class => 'btn'  %>
+              employee_path(@qualification.employee_id), :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_qualification_path(@qualification), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
