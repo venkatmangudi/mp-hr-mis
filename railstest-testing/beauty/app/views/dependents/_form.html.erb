@@ -8,6 +8,6 @@
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                dependents_path, :class => 'btn' %>
+                employee_path(@dependent.employee_id), :class => 'btn' %>
   </div>
 <% end %>
