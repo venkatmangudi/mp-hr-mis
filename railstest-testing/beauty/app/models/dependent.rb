@@ -3,4 +3,6 @@ class Dependent < ActiveRecord::Base
   belongs_to:employee
   belongs_to:relation
   belongs_to:status
+
+  validates_uniqueness_of(:Dependent_name)
 end
