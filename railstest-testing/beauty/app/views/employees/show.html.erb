@@ -152,6 +152,7 @@
     <% end %>
   </tbody>
 </table>
+<%= link_to "Add A New Posting for this Employee", new_posting_url(:id => @employee.id) %>
                 </div>
                                 <div class="tab-pane" id="lD">
                   <%- model_class = Dependent -%>
@@ -186,6 +187,7 @@
     <% end %>
   </tbody>
 </table>
+<%= link_to "Add A New Dependent for this Employee", new_dependent_url(:id => @employee.id) %>
                 </div>
                
                                 <div class="tab-pane" id="lE">
