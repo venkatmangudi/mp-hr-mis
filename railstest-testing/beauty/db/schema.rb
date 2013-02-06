@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206130312) do
+ActiveRecord::Schema.define(:version => 20130206142117) do
+
+  create_table "achievements", :force => true do |t|
+    t.integer  "employee_id"
+    t.string   "award_name"
+    t.string   "award_given_by"
+    t.text     "details"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -170,7 +179,7 @@ ActiveRecord::Schema.define(:version => 20130206130312) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "leaves", :force => true do |t|
+  create_table "leaveemps", :force => true do |t|
     t.integer  "employee_id"
     t.date     "date_from"
     t.date     "date_to"

@@ -1,4 +1,10 @@
 Beauty::Application.routes.draw do
+  resources :achievements
+
+
+  resources :leaveemps
+
+
   resources :leave_types
 
 

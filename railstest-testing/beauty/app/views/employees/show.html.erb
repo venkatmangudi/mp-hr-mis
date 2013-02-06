@@ -10,16 +10,16 @@
                 <li><a href="#lC" data-toggle="tab">Postings History</a></li>
                 <li><a href="#lB" data-toggle="tab">Qualifications</a></li>
                 <li><a href="#lD" data-toggle="tab">Dependents</a></li>                
-                <li><a href="#lB" data-toggle="tab">Additional Details</a></li>
-                <li><a href="#lC" data-toggle="tab">Achievements</a></li>                
-                <li><a href="#lB" data-toggle="tab">Training</a></li>
-                <li><a href="#lC" data-toggle="tab">Promotions</a></li>                
-                <li><a href="#lB" data-toggle="tab">Showcause</a></li>
-                <li><a href="#lC" data-toggle="tab">Enquiries</a></li>                
+                <!-- <li><a href="#lB" data-toggle="tab">Additional Details</a></li> -->
+                <li><a href="#lT" data-toggle="tab">Achievements</a></li>                
+<!--                 <li><a href="#lB" data-toggle="tab">Training</a></li>
+ --><!--                 <li><a href="#lC" data-toggle="tab">Promotions</a></li>                
+ --><!--                 <li><a href="#lB" data-toggle="tab">Showcause</a></li>
+ -->                <li><a href="#lC" data-toggle="tab">Enquiries</a></li>                
                 <li><a href="#lB" data-toggle="tab">Penalties</a></li>
-                <li><a href="#lC" data-toggle="tab">Leaves</a></li>
-                <li><a href="#lC" data-toggle="tab">Salary And Bills</a></li>
-              </ul>
+                <li><a href="#lI" data-toggle="tab">Leaves</a></li>
+<!--                 <li><a href="#lC" data-toggle="tab">Salary And Bills</a></li>
+ -->              </ul>
 <div class="tab-content">
 <div class="tab-pane active" id="lA">
   <div class="span8">
@@ -76,6 +76,76 @@
   </tbody>
 </table>
 </div>
+</div>
+
+<div class="tab-pane" id="lT">
+<%- model_class = Achievement -%>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+      <th><%= model_class.human_attribute_name(:award_name) %></th>
+      <th><%= model_class.human_attribute_name(:award_given_by) %></th>
+      <th><%= model_class.human_attribute_name(:details) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.achievements.each do |achievement| %>
+      <tr>
+        <td><%= link_to achievement.id, achievement_path(achievement) %></td>
+        <td><%= achievement.employee_id %></td>
+        <td><%= achievement.award_name %></td>
+        <td><%= achievement.award_given_by %></td>
+        <td><%= achievement.details %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_achievement_path(achievement), :class => 'btn btn-mini' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add A New Achievement for this Employee", new_achievement_url(:id => @employee.id) %>
+</div>
+
+<div class="tab-pane" id="lI">
+<%- model_class = Leaveemp -%>
+<table class="table table-bordered" id="leaveemps">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+      <th><%= model_class.human_attribute_name(:date_from) %></th>
+      <th><%= model_class.human_attribute_name(:date_to) %></th>
+      <th><%= model_class.human_attribute_name(:days) %></th>
+      <th><%= model_class.human_attribute_name(:leave_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:leave_reason) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.leaveemps.each do |leaveemp| %>
+      <tr>
+        <td><%= link_to leaveemp.id, leaveemp_path(leaveemp) %></td>
+        <td><%= leaveemp.employee.emp_full_name %></td>
+        <td><%= leaveemp.date_from %></td>
+        <td><%= leaveemp.date_to %></td>
+        <td><%= leaveemp.days %></td>
+        <td><%= leaveemp.leave_type.leave_type %></td>
+        <td><%= leaveemp.leave_reason %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_leaveemp_path(leaveemp), :class => 'btn btn-mini' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add A New Leave for this Employee", new_leaveemp_url(:id => @employee.id) %>
 </div>
 
 <div class="tab-pane" id="lB">

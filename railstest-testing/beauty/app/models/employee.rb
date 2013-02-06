@@ -4,6 +4,8 @@ class Employee < ActiveRecord::Base
   has_many:postings
   has_many:dependents
   has_many:qualifications
+  has_many:leaveemps
+  has_many:achievements
 
   belongs_to:gender
   belongs_to:category

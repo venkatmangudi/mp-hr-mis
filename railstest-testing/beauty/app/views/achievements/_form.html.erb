@@ -1,0 +1,12 @@
+<%= simple_form_for @achievement, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, :as => :hidden%>
+  <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, disabled: true%>
+  <%= f.input :award_name %>
+  <%= f.input :award_given_by %>
+  <%= f.input :details %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                achievements_path, :class => 'btn' %>
+  </div>
+<% end %>

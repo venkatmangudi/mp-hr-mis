@@ -1,0 +1,54 @@
+<%- model_class = Leaveemp -%>
+<div class="page-header">
+  <h1>Employee Leaves</h1>
+</div>
+<table class="table table-striped" id="leaveemps">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+      <th><%= model_class.human_attribute_name(:date_from) %></th>
+      <th><%= model_class.human_attribute_name(:date_to) %></th>
+      <th><%= model_class.human_attribute_name(:days) %></th>
+      <th><%= model_class.human_attribute_name(:leave_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:leave_reason) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @leaveemps.each do |leaveemp| %>
+      <tr>
+        <td><%= link_to leaveemp.id, leaveemp_path(leaveemp) %></td>
+        <td><%= leaveemp.employee.emp_full_name %></td>
+        <td><%= leaveemp.date_from %></td>
+        <td><%= leaveemp.date_to %></td>
+        <td><%= leaveemp.days %></td>
+        <td><%= leaveemp.leave_type.leave_type %></td>
+        <td><%= leaveemp.leave_reason %></td>
+        <td><%=l leaveemp.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_leaveemp_path(leaveemp), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      leaveemp_path(leaveemp),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_leaveemp_path,
+            :class => 'btn' %>
+<script>
+    $(document).ready(function() {
+      $('#leaveemps').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>
