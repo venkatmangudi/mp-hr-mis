@@ -29,3 +29,6 @@
 
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
+
+//= require rails.validations
+//= require rails.validations.simple_form

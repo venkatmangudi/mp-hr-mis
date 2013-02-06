@@ -58,6 +58,10 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.0.4)
+    client_side_validations (3.2.1)
+    client_side_validations-simple_form (2.0.1)
+      client_side_validations (~> 3.2.0)
+      simple_form (~> 2.0.3)
     coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -191,6 +195,8 @@ DEPENDENCIES
   better_errors
   bootstrap-modal-rails
   bootstrap-x-editable-rails
+  client_side_validations
+  client_side_validations-simple_form
   coffee-rails (~> 3.2.1)
   country_select
   formtastic

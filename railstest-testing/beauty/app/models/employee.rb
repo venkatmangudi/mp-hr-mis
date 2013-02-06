@@ -10,4 +10,19 @@ class Employee < ActiveRecord::Base
   belongs_to:religion
   belongs_to:caste
   belongs_to:blood_group
+
+  validates_presence_of(:emp_fname)
+  validates_presence_of(:emp_lname)
+  validates_presence_of(:emp_full_name)
+  validates_presence_of(:emp_mobile_no)
+  validates_presence_of(:emp_id)
+  validates_uniqueness_of(:emp_id)
+  validates_presence_of(:gender)
+  validates_presence_of(:emp_fname)
+  validates_presence_of(:emp_lname)
+  validates_presence_of(:emp_mobile_no)
+  validates_presence_of(:emp_id)
+  validates_uniqueness_of(:emp_id)
+  
+
 end
