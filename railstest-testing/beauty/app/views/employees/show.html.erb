@@ -137,7 +137,7 @@
     <% @employee.postings.each do |posting| %>
       <tr>
         <td><%= link_to posting.id, posting_path(posting) %></td>
-        <td><%= posting.institution_master.Institution_Name %></td>
+        <td><%= link_to posting.institution_master.Institution_Name,posting_path(posting) %></td>
         <td><%= posting.designation.Designation_English %></td>
         <td><%= posting.designation.Designation_Hindi %></td>
         <td><%= posting.posting_from %></td>
