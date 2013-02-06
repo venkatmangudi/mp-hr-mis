@@ -1,4 +1,10 @@
 Beauty::Application.routes.draw do
+  resources :promotions
+
+
+  resources :showcauses
+
+
   resources :achievements
 
 

@@ -1,0 +1,14 @@
+<%= simple_form_for @showcause, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, :as => :hidden%>
+  <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, disabled: true%>
+  <%= f.input :case_no %>
+  <%= f.input :district_authority %>
+  <%= f.input :SC_date %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                showcauses_path, :class => 'btn' %>
+  </div>
+<% end %>

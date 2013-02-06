@@ -1,0 +1,46 @@
+<%- model_class = Showcause -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+      <th><%= model_class.human_attribute_name(:case_no) %></th>
+      <th><%= model_class.human_attribute_name(:district_authority) %></th>
+      <th><%= model_class.human_attribute_name(:SC_date) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:details) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @showcauses.each do |showcause| %>
+      <tr>
+        <td><%= link_to showcause.id, showcause_path(showcause) %></td>
+        <td><%= showcause.employee_id %></td>
+        <td><%= showcause.case_no %></td>
+        <td><%= showcause.district_authority %></td>
+        <td><%= showcause.SC_date %></td>
+        <td><%= showcause.title %></td>
+        <td><%= showcause.details %></td>
+        <td><%=l showcause.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_showcause_path(showcause), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      showcause_path(showcause),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_showcause_path,
+            :class => 'btn btn-primary' %>

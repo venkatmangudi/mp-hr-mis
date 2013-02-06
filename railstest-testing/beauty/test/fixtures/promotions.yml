@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee_id: 1
+  current_payscale: MyString
+  designation_id: 1
+  new_payscale: MyString
+  designation_id: 1
+  order_no: 1
+
+two:
+  employee_id: 1
+  current_payscale: MyString
+  designation_id: 1
+  new_payscale: MyString
+  designation_id: 1
+  order_no: 1

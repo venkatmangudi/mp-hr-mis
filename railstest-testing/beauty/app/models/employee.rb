@@ -6,6 +6,8 @@ class Employee < ActiveRecord::Base
   has_many:qualifications
   has_many:leaveemps
   has_many:achievements
+  has_many:showcauses
+  has_many:promotions
 
   belongs_to:gender
   belongs_to:category

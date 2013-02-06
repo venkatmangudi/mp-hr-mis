@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206142117) do
+ActiveRecord::Schema.define(:version => 20130206151811) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "employee_id"
@@ -230,6 +230,16 @@ ActiveRecord::Schema.define(:version => 20130206142117) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "promotions", :force => true do |t|
+    t.integer  "employee_id"
+    t.string   "current_payscale"
+    t.integer  "designation_id"
+    t.string   "new_payscale"
+    t.integer  "order_no"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "qualification_names", :force => true do |t|
     t.string   "Qualification_name"
     t.datetime "created_at",         :null => false
@@ -264,6 +274,17 @@ ActiveRecord::Schema.define(:version => 20130206142117) do
     t.string   "religion_name"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "showcauses", :force => true do |t|
+    t.integer  "employee_id"
+    t.integer  "case_no"
+    t.string   "district_authority"
+    t.date     "SC_date"
+    t.string   "title"
+    t.text     "details"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "special_cadres", :force => true do |t|

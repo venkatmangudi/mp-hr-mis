@@ -13,9 +13,9 @@
                 <!-- <li><a href="#lB" data-toggle="tab">Additional Details</a></li> -->
                 <li><a href="#lT" data-toggle="tab">Achievements</a></li>                
 <!--                 <li><a href="#lB" data-toggle="tab">Training</a></li>
- --><!--                 <li><a href="#lC" data-toggle="tab">Promotions</a></li>                
- --><!--                 <li><a href="#lB" data-toggle="tab">Showcause</a></li>
- -->                <li><a href="#lC" data-toggle="tab">Enquiries</a></li>                
+ -->            <li><a href="#lP" data-toggle="tab">Promotions</a></li>                
+                <li><a href="#lS" data-toggle="tab">Showcause</a></li>
+                <li><a href="#lC" data-toggle="tab">Enquiries</a></li>                
                 <li><a href="#lB" data-toggle="tab">Penalties</a></li>
                 <li><a href="#lI" data-toggle="tab">Leaves</a></li>
 <!--                 <li><a href="#lC" data-toggle="tab">Salary And Bills</a></li>
@@ -78,13 +78,94 @@
 </div>
 </div>
 
+<div class="tab-pane" id="lP">
+<%- model_class = Promotion -%>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+
+      <th><%= model_class.human_attribute_name(:current_payscale) %></th>
+      <th>New Designation (English)</th>
+      <th>New Designation (Hindi)</th>
+      <th><%= model_class.human_attribute_name(:new_payscale) %></th>
+      <th><%= model_class.human_attribute_name(:order_no) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.promotions.each do |promotion| %>
+      <tr>
+        <td><%= link_to promotion.id, promotion_path(promotion) %></td>
+
+        <td><%= promotion.current_payscale %><span class="WebRupee">  Rs.</span></td>
+        <td><%= promotion.designation.Designation_English %></td>
+        <td><%= promotion.designation.Designation_Hindi %></td>
+        <td><%= promotion.new_payscale %><span class="WebRupee">  Rs.</span></td>
+        <td><%= promotion.order_no %></td>
+        <td><%=l promotion.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_promotion_path(promotion), :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add A New Promotion for this Employee", new_promotion_url(:id => @employee.id) %>
+</div>
+
+
+
+
+<div class="tab-pane" id="lS">
+<%- model_class = Showcause -%>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+
+      <th><%= model_class.human_attribute_name(:case_no) %></th>
+      <th><%= model_class.human_attribute_name(:district_authority) %></th>
+      <th><%= model_class.human_attribute_name(:SC_date) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:details) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.showcauses.each do |showcause| %>
+      <tr>
+        <td><%= link_to showcause.id, showcause_path(showcause) %></td>
+
+        <td><%= showcause.case_no %></td>
+        <td><%= showcause.district_authority %></td>
+        <td><%= showcause.SC_date %></td>
+        <td><%= showcause.title %></td>
+        <td><%= showcause.details %></td>
+        <td><%=l showcause.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_showcause_path(showcause), :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add A New Showcause for this Employee", new_showcause_url(:id => @employee.id) %>
+</div>
+
+
 <div class="tab-pane" id="lT">
 <%- model_class = Achievement -%>
 <table class="table table-bordered">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+
       <th><%= model_class.human_attribute_name(:award_name) %></th>
       <th><%= model_class.human_attribute_name(:award_given_by) %></th>
       <th><%= model_class.human_attribute_name(:details) %></th>
@@ -95,7 +176,7 @@
     <% @employee.achievements.each do |achievement| %>
       <tr>
         <td><%= link_to achievement.id, achievement_path(achievement) %></td>
-        <td><%= achievement.employee_id %></td>
+
         <td><%= achievement.award_name %></td>
         <td><%= achievement.award_given_by %></td>
         <td><%= achievement.details %></td>
@@ -117,7 +198,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+
       <th><%= model_class.human_attribute_name(:date_from) %></th>
       <th><%= model_class.human_attribute_name(:date_to) %></th>
       <th><%= model_class.human_attribute_name(:days) %></th>
@@ -130,7 +211,7 @@
     <% @employee.leaveemps.each do |leaveemp| %>
       <tr>
         <td><%= link_to leaveemp.id, leaveemp_path(leaveemp) %></td>
-        <td><%= leaveemp.employee.emp_full_name %></td>
+
         <td><%= leaveemp.date_from %></td>
         <td><%= leaveemp.date_to %></td>
         <td><%= leaveemp.days %></td>
