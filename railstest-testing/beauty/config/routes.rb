@@ -88,11 +88,6 @@ Beauty::Application.routes.draw do
 
   resources :employees
 
-
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
   resources :posts
 
 
