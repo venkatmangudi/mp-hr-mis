@@ -47,9 +47,10 @@ GEM
     best_in_place (2.0.3)
       jquery-rails
       rails (~> 3.1)
-    better_errors (0.3.2)
+    better_errors (0.5.0)
       coderay (>= 1.0.0)
-      erubis (>= 2.7.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.6.8)
     bootstrap-modal-rails (2.1)
       railties (>= 3.1)
     bootstrap-x-editable-rails (1.4.1)
@@ -148,7 +149,7 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.0.3)
-    rdoc (3.12)
+    rdoc (3.12.1)
       json (~> 1.4)
     ref (1.0.2)
     responders (0.9.3)
@@ -193,6 +194,7 @@ DEPENDENCIES
   activeadmin
   best_in_place
   better_errors
+  binding_of_caller
   bootstrap-modal-rails
   bootstrap-x-editable-rails
   client_side_validations

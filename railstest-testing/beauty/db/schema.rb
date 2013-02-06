@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205115917) do
+ActiveRecord::Schema.define(:version => 20130206130312) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -162,6 +162,23 @@ ActiveRecord::Schema.define(:version => 20130205115917) do
     t.string   "Institution_type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "leave_types", :force => true do |t|
+    t.string   "leave_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "leaves", :force => true do |t|
+    t.integer  "employee_id"
+    t.date     "date_from"
+    t.date     "date_to"
+    t.integer  "days"
+    t.integer  "leave_type_id"
+    t.text     "leave_reason"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "locations", :force => true do |t|

@@ -1,0 +1,8 @@
+<%= simple_form_for @leave_type, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :leave_type %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                leave_types_path, :class => 'btn' %>
+  </div>
+<% end %>

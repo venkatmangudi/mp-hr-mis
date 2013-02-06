@@ -1,4 +1,7 @@
 Beauty::Application.routes.draw do
+  resources :leave_types
+
+
   resources :qualifications
 
 
