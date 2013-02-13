@@ -74,6 +74,9 @@ Beauty::Application.routes.draw do
   resources :blood_groups
 
 
+  resources :gender_views
+
+
   resources :genders
 
 
