@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require raphael
+//= require morris
+//= require jquery.ui.datepicker
 //= require twitter/bootstrap
 //= require_tree .
 //= require twitter/bootstrap/bootstrap-transition
@@ -25,7 +28,6 @@
 //= require jquery.purr
 //= require best_in_place
 //= require best_in_place.purr
-
 
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
