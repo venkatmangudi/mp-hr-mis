@@ -1,0 +1,8 @@
+<%= simple_form_for @blood_group, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :blood_group_type %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                blood_groups_path, :class => 'btn' %>
+  </div>
+<% end %>

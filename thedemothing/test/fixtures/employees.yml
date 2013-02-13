@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  emp_id: MyString
+  emp_no: MyString
+  emp_new_id: MyString
+  emp_full_name: MyString
+  emp_fname: MyString
+  emp_mname: MyString
+  emp_lname: MyString
+  emp_fathername: MyString
+  gender_id: MyString
+  emp_dob: 2013-01-23 13:02:41
+  category_id: MyString
+  religion_id: MyString
+  caste_id: MyString
+  blood_group_id: MyString
+  emp_permanent_address: MyString
+  emp_loc_master_id: MyString
+  emp_phone_no: MyString
+  emp_mobile_no: MyString
+  emp_email: MyString
+
+two:
+  emp_id: MyString
+  emp_no: MyString
+  emp_new_id: MyString
+  emp_full_name: MyString
+  emp_fname: MyString
+  emp_mname: MyString
+  emp_lname: MyString
+  emp_fathername: MyString
+  gender_id: MyString
+  emp_dob: 2013-01-23 13:02:41
+  category_id: MyString
+  religion_id: MyString
+  caste_id: MyString
+  blood_group_id: MyString
+  emp_permanent_address: MyString
+  emp_loc_master_id: MyString
+  emp_phone_no: MyString
+  emp_mobile_no: MyString
+  emp_email: MyString

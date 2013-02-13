@@ -1,0 +1,6 @@
+%h2 Create New User
+= form_for @user, :url => user_index_path do |f|
+  
+  = render :partial => 'form', :locals => { :f => f }
+  
+  = link_to "Back", :back

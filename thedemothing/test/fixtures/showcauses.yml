@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee_id: 1
+  case_no: 1
+  district_authority: MyString
+  SC_date: 2013-02-06
+  title: MyString
+  details: MyText
+
+two:
+  employee_id: 1
+  case_no: 1
+  district_authority: MyString
+  SC_date: 2013-02-06
+  title: MyString
+  details: MyText

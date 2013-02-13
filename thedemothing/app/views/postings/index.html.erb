@@ -1,0 +1,57 @@
+<%- model_class = Posting -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-bordered" id="postings">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+      <th>Institution</th>
+      <th>Designation (English)</th>
+      <th>Designation (Hindi)</th>
+      <th><%= model_class.human_attribute_name(:posting_from) %></th>
+      <th><%= model_class.human_attribute_name(:posting_to) %></th>
+      <th><%= model_class.human_attribute_name(:payscale) %></th>
+      <th><%= model_class.human_attribute_name(:district_id) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @postings.each do |posting| %>
+      <tr>
+        <td><%= link_to posting.id, posting_path(posting) %></td>
+        <td><%= posting.employee.emp_full_name %></td>
+        <td><%= posting.institution_master.Institution_Name %></td>
+        <td><%= posting.designation.Designation_English %></td>
+        <td><%= posting.designation.Designation_Hindi %></td>
+        <td><%= posting.posting_from %></td>
+        <td><%= posting.posting_to %></td>
+        <td><%= posting.payscale %></td>
+        <td><%= posting.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_posting_path(posting), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      posting_path(posting),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_posting_path,
+            :class => 'btn' %>
+
+<script>
+    $(document).ready(function() {
+      $('#postings').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>

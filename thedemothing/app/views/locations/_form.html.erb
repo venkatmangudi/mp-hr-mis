@@ -1,0 +1,13 @@
+<%= simple_form_for @location, :html => { :class => 'form-horizontal' } do |f| %>
+ 	<%= f.input :address %>
+  	<%= f.input :latitude %>
+   	<%= f.input :longitude %>
+
+<%= f.association :state,label_method: :state_name, value_method: :id, include_blank: false %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                locations_path, :class => 'btn' %>
+  </div>
+<% end %>

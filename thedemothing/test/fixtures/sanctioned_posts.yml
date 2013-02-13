@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  health_dept_locationID: 1
+  designationID: 1
+  sac_post: 1
+
+two:
+  health_dept_locationID: 1
+  designationID: 1
+  sac_post: 1

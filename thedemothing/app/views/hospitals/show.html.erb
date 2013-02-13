@@ -1,0 +1,400 @@
+<%- model_class = Hospital -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<h5>Hospital Name: <%= @hospital.hospital_name %></h5>
+<div class="bs-docs-example">
+            <div class="tabbable tabs-left">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#lA" data-toggle="tab">Basic Information</a></li>
+                <li><a href="#lB" data-toggle="tab">Statistics</a></li>
+                <li><a href="#lC" data-toggle="tab">Doctor's Information</a></li>
+                <li><a href="#lD" data-toggle="tab">Hospital Reports</a></li>
+              </ul>
+              <div class="tab-content">
+<div class="tab-pane active" id="lA">
+  <div class="span8">
+<table class="table table-striped table-condensed">
+  <tbody
+    <tr>
+        <td>Hospital Name</td>
+        <td><%= best_in_place @hospital, :hospital_name %><br/></td>
+        </td> 
+      </tr>
+      <tr>
+        <td>Location Code</td>
+        <td><%= best_in_place @hospital, :location_code %><br/></td>
+        </td> 
+      </tr>
+      <tr>
+        <td>District Name</td>
+        <td><%= best_in_place @hospital, :district_id, :type => :select , :collection => District.all.map{ |e| [e.id, e.district_name] } %></td>
+        </td>
+        </td>                                      
+      </tr>
+      <tr>
+        <td>Category Type</td>
+        <td><%= best_in_place @hospital, :institution_type_id, :type => :select , :collection => InstitutionType.all.map{ |e| [e.id, e.Institution_type] } %></td>
+        </td>                                      
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td><%= best_in_place @hospital, :phone_no %><br/></td>
+        </td>                                      
+      </tr>
+      <tr>
+        <td>Fax Number</td>
+        <td><%= best_in_place @hospital, :fax_no %><br/></td>
+        </td>                                      
+      </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<div class="tab-pane" id="lB">
+  <div class="span5">
+<table class="table table-striped table-condensed">
+  <tbody>
+    <tr>
+        <td> Beds</td>
+        <td><%= best_in_place @hospital, :beds%><br/></td>
+        </td>                                       
+    </tr>
+    <tr>
+        <td> Total Doctors</td>
+        <td><%= best_in_place @hospital, :total_doctors%><br/></td>
+        </td>                                       
+    </tr>
+    <tr>
+        <td> Post-Graduates</td>
+        <td><%= best_in_place @hospital, :post_graduates %><br/></td>
+        </td>                                       
+    </tr>
+    <tr>
+        <td>Calss I</td>
+        <td><%= best_in_place @hospital, :post_graduates %></td>                          
+    </tr>  
+    <tr>
+        <td>Class II</td>
+        <td><%= best_in_place @hospital, :post_graduates %></td>                          
+    </tr>  
+    <tr>
+        <td>Regular Posts</td>
+        <td><%= best_in_place @hospital, :regular_posts %></td>                          
+    </tr>
+    <tr>
+        <td>Contractual Doctors</td>
+        <td><%= best_in_place @hospital, :con_doctors %></td>                          
+    </tr>  
+    <tr>
+        <td>Against Medical Bond</td>
+        <td><%= best_in_place @hospital, :against_med_bond %></td>                          
+    </tr>  
+    <tr>
+        <td>Regular for duties</td>
+        <td><%= best_in_place @hospital, :regular_for_duties %></td>                          
+    </tr>
+    <tr>
+        <td>Unauthorised Absent</td>
+        <td><%= best_in_place @hospital, :unauthorised_absent %></td>                          
+    </tr>  
+    <tr>
+        <td>Deputation / Studies </td>
+        <td><%= best_in_place @hospital, :deputation_studies %></td>                          
+    </tr>
+    <tr>
+        <td>Others</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>       
+    </tr>                                   
+  </tbody>
+</table>
+</div>
+</div>
+
+<div class="tab-pane" id="lC">
+<%- model_class = Posting -%>
+<table class="table table-bordered" id="postings">
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Name</th>
+      <th>Emp ID</th>
+      <th>Designation</th>
+    </tr>
+  </thead>
+  
+</table>
+</div>
+
+<div class="tab-pane" id="lD">
+  <div class="span5">
+<table class="table table-striped table-condensed">
+  <tbody>
+    <tr>
+        <td> Shorting</td>
+        <td><%= best_in_place @hospital, :post_graduates%><br/></td>
+        </td>                                       
+    </tr>
+    <tr>
+        <td> AnesSan</td>
+        <td><%= best_in_place @hospital, :post_graduates %><br/></td>
+        </td>                                       
+    </tr>
+    <tr>
+        <td>AnesAvl</td>
+        <td><%= best_in_place @hospital, :post_graduates %></td>                          
+    </tr>  
+    <tr>
+        <td>Anesgap</td>
+        <td><%= best_in_place @hospital, :post_graduates %></td>                          
+    </tr>  
+    <tr>
+        <td>Anesua</td>
+        <td><%= best_in_place @hospital, :regular_posts %></td>                          
+    </tr>
+    <tr>
+        <td>Gynsan</td>
+        <td><%= best_in_place @hospital, :con_doctors %></td>                          
+    </tr>  
+    <tr>
+        <td>Gynavl</td>
+        <td><%= best_in_place @hospital, :against_med_bond %></td>                          
+    </tr>  
+    <tr>
+        <td>Gyngap</td>
+        <td><%= best_in_place @hospital, :regular_for_duties %></td>                          
+    </tr>
+    <tr>
+        <td>Gynua</td>
+        <td><%= best_in_place @hospital, :unauthorised_absent %></td>                          
+    </tr>  
+    <tr>
+        <td>Paedsan</td>
+        <td><%= best_in_place @hospital, :deputation_studies %></td>                          
+    </tr>
+    <tr>
+        <td>Paedavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Paedgap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>       
+    <tr>
+        <td>Paedua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Opthsan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Opthavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Opthgap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Opthua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Orthsan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Orthavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Orthgap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Orthua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Entsan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Entavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Entgap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Entua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Radisan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Radiavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Radigap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Radiua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Pathsan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Pathavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Pathgap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Pathua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Surgsan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Surgavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Surggap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Surgua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Genlsan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Genlavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Genlgap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Genlgap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Tbsan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Tbavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Tbua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Denspesan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Denspeavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Denspegap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Denspeua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Mosan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Moavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Moavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Moua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Dentsan</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Dentavl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Dentgap</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Dentua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Totalua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Other</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Otherua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Totalua</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Total spec san</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    <tr>
+        <td>Total spec avl</td>
+        <td><%= best_in_place @hospital, :others %></td>                          
+    </tr>
+    
+
+    </tr>  
+  </tbody>
+</table>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>

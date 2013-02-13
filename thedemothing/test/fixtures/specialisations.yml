@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Specialisation_name: MyString
+
+two:
+  Specialisation_name: MyString

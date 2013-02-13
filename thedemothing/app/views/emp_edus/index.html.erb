@@ -1,0 +1,50 @@
+<%- model_class = EmpEdu -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-bordered" id="empedu">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:emp_id) %></th>
+      <th><%= model_class.human_attribute_name(:emp_education) %></th>
+      <th><%= model_class.human_attribute_name(:emp_specialisation) %></th>
+      <th><%= model_class.human_attribute_name(:emp_remarks) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @emp_edus.each do |emp_edu| %>
+      <tr>
+        <td><%= link_to emp_edu.id, emp_edu_path(emp_edu) %></td>
+        <td><%= emp_edu.emp_id %></td>
+        <td><%= emp_edu.emp_education %></td>
+        <td><%= emp_edu.emp_specialisation %></td>
+        <td><%= emp_edu.emp_remarks %></td>
+        <td><%=l emp_edu.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_emp_edu_path(emp_edu), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      emp_edu_path(emp_edu),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_emp_edu_path,
+            :class => 'btn' %>
+<script>
+    $(document).ready(function() {
+      $('#empedu').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>

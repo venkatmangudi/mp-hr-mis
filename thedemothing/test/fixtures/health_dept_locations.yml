@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  location_id: 1
+  division_id: 1
+  district_id: 1
+  block_id: 1
+  name: MyString
+  admin_location: false
+  district_code: MyString
+  istribal: false
+  no_of_beds: 1
+
+two:
+  location_id: 1
+  division_id: 1
+  district_id: 1
+  block_id: 1
+  name: MyString
+  admin_location: false
+  district_code: MyString
+  istribal: false
+  no_of_beds: 1

@@ -1,0 +1,56 @@
+<%- model_class = Qualification -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-bordered" id="qualifications">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+      <th><%= model_class.human_attribute_name(:qualification_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:qualification_name_id) %></th>
+      <th><%= model_class.human_attribute_name(:specialisation_id) %></th>
+      <th><%= model_class.human_attribute_name(:year) %></th>
+      <th><%= model_class.human_attribute_name(:university_id) %></th>
+      <th><%= model_class.human_attribute_name(:Remarks) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @qualifications.each do |qualification| %>
+      <tr>
+        <td><%= link_to qualification.id, qualification_path(qualification) %></td>
+        <td><%= qualification.employee.emp_full_name %></td>
+        <td><%= qualification.qualification_type.Qualification_type %></td>
+        <td><%= qualification.qualification_name.Qualification_name %></td>
+        <td><%= qualification.specialisation.Specialisation_name %></td>
+        <td><%= qualification.year %></td>
+        <td><%= qualification.university.University_name %></td>
+        <td><%= qualification.Remarks %></td>
+        <td><%= qualification.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_qualification_path(qualification), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      qualification_path(qualification),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_qualification_path,
+            :class => 'btn' %>
+<script>
+    $(document).ready(function() {
+      $('#qualifications').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>

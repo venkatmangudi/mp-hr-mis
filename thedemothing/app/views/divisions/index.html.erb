@@ -1,0 +1,35 @@
+<%- model_class = Division -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<script src="/app/assets/javascripts/jquery.dataTables.columnFilter.js" type="text/javascript"></script>
+<table class="table table-bordered" id="divisions">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:state_name) %></th>
+      <th><%= model_class.human_attribute_name(:division_name) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @divisions.each do |division| %>
+      <tr>
+        <td><%= division.state.state_name %></td>
+        <td><%= division.division_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_division_path,
+            :class => 'btn' %>
+
+<script>
+    $(document).ready(function() {
+      $('#states').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>
+

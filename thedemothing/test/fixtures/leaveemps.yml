@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee_id: 1
+  date_from: 2013-02-06
+  date_to: 2013-02-06
+  days: 1
+  leave_type_id: 1
+  leave_reason: MyText
+
+two:
+  employee_id: 1
+  date_from: 2013-02-06
+  date_to: 2013-02-06
+  days: 1
+  leave_type_id: 1
+  leave_reason: MyText

@@ -1,0 +1,12 @@
+<%= simple_form_for @sanctioned_post, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :health_dept_locationID %>
+  <%= f.label :Designation %>
+  <%= collection_select(:sanctioned_post, :designation_id, Designation.all, :id, :Designation_English, {:prompt => true, :multiple=>true }) %><br><br>
+
+  <%= f.input :sac_post %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                sanctioned_posts_path, :class => 'btn' %>
+  </div>
+<% end %>

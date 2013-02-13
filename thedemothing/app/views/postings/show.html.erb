@@ -1,0 +1,33 @@
+<%- model_class = Posting -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:employee_id) %>:</strong></dt>
+  <dd><%= @posting.employee.emp_full_name %></dd>
+  <dt><strong>Institution:</strong></dt>
+  <dd><%= @posting.institution_master.Institution_Name %></dd>
+  <dt><strong>Designation (English): </strong></dt>
+  <dd><%= @posting.designation.Designation_English %></dd>
+  <dt><strong>Designation (Hindi): </strong></dt>
+  <dd><%= @posting.designation.Designation_Hindi %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:posting_from) %>:</strong></dt>
+  <dd><%= @posting.posting_from %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:posting_to) %>:</strong></dt>
+  <dd><%= @posting.posting_to %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:payscale) %>:</strong></dt>
+  <dd><%= @posting.payscale %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              employee_path(@posting.employee_id), :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_posting_path(@posting), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              posting_path(@posting),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

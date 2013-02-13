@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee_id: 1
+  qualification_type_id: 1
+  qualification_name_id: 1
+  specialisation_id: 1
+  year: 1
+  university_id: 1
+  Remarks: MyText
+
+two:
+  employee_id: 1
+  qualification_type_id: 1
+  qualification_name_id: 1
+  specialisation_id: 1
+  year: 1
+  university_id: 1
+  Remarks: MyText

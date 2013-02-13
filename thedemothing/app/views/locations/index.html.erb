@@ -1,0 +1,51 @@
+<%- model_class = Location -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-bordered" id="locations">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:block_name) %></th>
+      <th><%= model_class.human_attribute_name(:locationID) %></th>
+      <th><%= model_class.human_attribute_name(:location_code) %></th>
+      <th><%= model_class.human_attribute_name(:location_name) %></th>
+      <th><%= model_class.human_attribute_name(:latitude) %></th>
+      <th><%= model_class.human_attribute_name(:longitude) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.block.block_name %>
+        <td><%= location.locationID %></td>
+        <td><%= location.location_code %></td> 
+        <td><%= location.location_name %></td>       
+        <td><%= location.latitude %></td>
+        <td><%= location.longitude %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_location_path(location), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      location_path(location),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_location_path,
+            :class => 'btn' %>
+
+<script>
+    $(document).ready(function() {
+      $('#locations').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>

@@ -1,0 +1,76 @@
+<%- model_class = Address -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:employee_id) %></th>
+      <th><%= model_class.human_attribute_name(:address1) %></th>
+      <th><%= model_class.human_attribute_name(:address2) %></th>
+      <th><%= model_class.human_attribute_name(:address3) %></th>
+      <th><%= model_class.human_attribute_name(:city) %></th>
+      <th><%= model_class.human_attribute_name(:postalcode) %></th>
+      <th><%= model_class.human_attribute_name(:postoffice) %></th>
+      <th><%= model_class.human_attribute_name(:state_id) %></th>
+      <th><%= model_class.human_attribute_name(:validsince) %></th>
+      <th><%= model_class.human_attribute_name(:homephone) %></th>
+      <th><%= model_class.human_attribute_name(:mobilephone) %></th>
+      <th><%= model_class.human_attribute_name(:emailid) %></th>
+      <th><%= model_class.human_attribute_name(:perm_address1) %></th>
+      <th><%= model_class.human_attribute_name(:perm_address2) %></th>
+      <th><%= model_class.human_attribute_name(:perm_address3) %></th>
+      <th><%= model_class.human_attribute_name(:perm_city) %></th>
+      <th><%= model_class.human_attribute_name(:perm_postalcode) %></th>
+      <th><%= model_class.human_attribute_name(:perm_postoffice) %></th>
+      <th><%= model_class.human_attribute_name(:perm_state_id) %></th>
+      <th><%= model_class.human_attribute_name(:perm_homephone) %></th>
+      <th><%= model_class.human_attribute_name(:created_datetime) %></th>
+      <th><%= model_class.human_attribute_name(:updated_datetime) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @addresses.each do |address| %>
+      <tr>
+        <td><%= link_to address.id, address_path(address) %></td>
+        <td><%= address.employee_id %></td>
+        <td><%= address.address1 %></td>
+        <td><%= address.address2 %></td>
+        <td><%= address.address3 %></td>
+        <td><%= address.city %></td>
+        <td><%= address.postalcode %></td>
+        <td><%= address.postoffice %></td>
+        <td><%= address.state_id %></td>
+        <td><%= address.validsince %></td>
+        <td><%= address.homephone %></td>
+        <td><%= address.mobilephone %></td>
+        <td><%= address.emailid %></td>
+        <td><%= address.perm_address1 %></td>
+        <td><%= address.perm_address2 %></td>
+        <td><%= address.perm_address3 %></td>
+        <td><%= address.perm_city %></td>
+        <td><%= address.perm_postalcode %></td>
+        <td><%= address.perm_postoffice %></td>
+        <td><%= address.perm_state_id %></td>
+        <td><%= address.perm_homephone %></td>
+        <td><%= address.created_datetime %></td>
+        <td><%= address.updated_datetime %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_address_path(address), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      address_path(address),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_address_path,
+            :class => 'btn btn-primary' %>

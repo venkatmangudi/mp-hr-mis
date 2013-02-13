@@ -1,0 +1,16 @@
+<%= simple_form_for @qualification, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, :as => :hidden%>
+    <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, disabled: true%>
+  <%= f.association :qualification_type,label_method: :Qualification_type, value_method: :id, include_blank: false %>
+  <%= f.association :qualification_name,label_method: :Qualification_name, value_method: :id, include_blank: false %>
+  <%= f.association :specialisation,label_method: :Specialisation_name, value_method: :id, include_blank: false %>
+  <%= f.input :year %>
+  <%= f.association :university,label_method: :University_name, value_method: :id, include_blank: false %>
+  <%= f.input :Remarks %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                employee_path(@qualification.employee_id), :class => 'btn' %>
+  </div>
+<% end %>

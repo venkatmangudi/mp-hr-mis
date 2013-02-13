@@ -1,0 +1,489 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="http://cdn.webrupee.com/font">
+
+<h3>Employee Details for <%= @employee.emp_full_name %></h3><br><br>
+          <div class="bs-docs-example">
+            <div class="tabbable tabs-left">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#lA" data-toggle="tab">Primary Details</a></li>
+                <li><a href="#lX" data-toggle="tab">Address Details</a></li>
+                <li><a href="#lC" data-toggle="tab">Postings History</a></li>
+                <li><a href="#lB" data-toggle="tab">Qualifications</a></li>
+                <li><a href="#lD" data-toggle="tab">Dependents</a></li>                
+                <!-- <li><a href="#lB" data-toggle="tab">Additional Details</a></li> -->
+                <li><a href="#lT" data-toggle="tab">Achievements</a></li>                
+<!--                 <li><a href="#lB" data-toggle="tab">Training</a></li>
+ -->            <li><a href="#lP" data-toggle="tab">Promotions</a></li>                
+                <li><a href="#lS" data-toggle="tab">Showcause</a></li>
+<!--                <li><a href="#lC" data-toggle="tab">Enquiries</a></li>                -->
+<!--                <li><a href="#lB" data-toggle="tab">Penalties</a></li>
+                <li><a href="#lI" data-toggle="tab">Leaves</a></li>-->
+<!--                 <li><a href="#lC" data-toggle="tab">Salary And Bills</a></li>
+ -->              </ul>
+<div class="tab-content">
+<div class="tab-pane active" id="lA">
+  <div class="span8">
+<table class="table table-striped table-condensed">
+  <tbody>  
+    <tr>
+        <td>Employee ID</td>
+        <!-- <td><%=@employee.emp_id %></td> -->
+        <td><%= best_in_place @employee, :emp_id %></td>                                      
+    </tr>
+    <tr>
+       <td>Treasury ID</td>
+       <td><%= best_in_place @employee, :emp_treasury_id %></td>
+    <tr>
+        <td>Full Name</td>
+        <td><%= best_in_place @employee, :emp_full_name %></td>                          
+    </tr>
+    <tr>
+        <td>First Name</td>
+        <td><%= best_in_place @employee, :emp_fname %></td>                          
+    </tr>
+    <tr>
+        <td>Middle Name</td>
+        <td><%= best_in_place @employee, :emp_mname %></td>                          
+    </tr>
+    <tr>
+        <td>Last Name</td>
+        <td><%= best_in_place @employee, :emp_lname %></td>                          
+    </tr>
+    <tr>
+        <td>Father Name</td>
+        <td><%= best_in_place @employee, :emp_fathername%></td>                          
+    </tr>
+    <tr>
+        <td>Gender</td>
+       <!-- <td><%= @employee.gender.gender_name%></td>      -->
+        <td><%= best_in_place @employee, :gender_id, :type => :select , :collection => Gender.all.map{ |e| [e.id, e.gender_name] } %></td>                    
+    </tr>
+    <tr>
+        <td>Date of Birth</td>
+        <td><%=@employee.emp_dob %></td>                          
+    </tr>
+    <tr>
+        <td>Category</td>
+<!--        <td><%=@employee.category.category_name %></td>                          -->
+        <td><%= best_in_place @employee, :category_id, :type => :select , :collection => Category.all.map{ |e| [e.id, e.category_name] } %></td>
+    </tr>
+    <tr>
+        <td>Religion</td>
+<!--        <td><%=@employee.religion.religion_name %></td>                          -->
+        <td><%= best_in_place @employee, :religion_id, :type => :select , :collection => Religion.all.map{ |e| [e.id, e.religion_name] } %></td>
+    </tr>
+    <tr>
+        <td>Caste</td>
+<!--        <td><%=@employee.caste.caste_name %></td>                          -->
+        <td><%= best_in_place @employee, :caste_id, :type => :select , :collection => Caste.all.map{ |e| [e.id, e.caste_name] } %></td>
+    </tr>
+    <tr>
+        <td>Blood Group</td>
+<!--        <td><%=@employee.blood_group.blood_group_type %></td>-->
+        <td><%= best_in_place @employee, :blood_group_id, :type => :select , :collection => BloodGroup.all.map{ |e| [e.id, e.blood_group_type] } %></td>
+    </tr>
+    <tr>
+      <td>Employment Type</td>
+      <td><%= best_in_place @employee, :employment_type %></td> 
+    </tr>       
+    <tr>
+        <td>Location</td>
+        <td><%= best_in_place @employee, :emp_loc_master_id %></td>                          
+    </tr>                             
+  </tbody>
+</table>
+</div>
+</div>
+
+<div class="tab-pane" id="lP">
+<%- model_class = Promotion -%>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+<!--      <th><%= model_class.human_attribute_name(:id) %></th>-->
+
+      <th><%= model_class.human_attribute_name(:current_payscale) %></th>
+      <th>New Designation (English)</th>
+      <th>New Designation (Hindi)</th>
+      <th><%= model_class.human_attribute_name(:new_payscale) %></th>
+      <th><%= model_class.human_attribute_name(:order_no) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.promotions.each do |promotion| %>
+      <tr>
+<!--        <td><%= link_to promotion.id, promotion_path(promotion) %></td>-->
+
+        <td><%= promotion.current_payscale %><span class="WebRupee">  Rs.</span></td>
+        <td><%= promotion.designation.Designation_English %></td>
+        <td><%= promotion.designation.Designation_Hindi %></td>
+        <td><%= promotion.new_payscale %><span class="WebRupee">  Rs.</span></td>
+        <td><%= promotion.order_no %></td>
+        <td><%=l promotion.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_promotion_path(promotion), :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Add A New Promotion for this Employee", new_promotion_url(:id => @employee.id) %>
+</div>
+
+
+
+
+<div class="tab-pane" id="lS">
+<%- model_class = Showcause -%>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+<!--      <th><%= model_class.human_attribute_name(:id) %></th>-->
+
+      <th><%= model_class.human_attribute_name(:case_no) %></th>
+      <th><%= model_class.human_attribute_name(:district_authority) %></th>
+      <th><%= model_class.human_attribute_name(:SC_date) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:details) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.showcauses.each do |showcause| %>
+      <tr>
+<!--        <td><%= link_to showcause.id, showcause_path(showcause) %></td>-->
+
+        <td><%= showcause.case_no %></td>
+        <td><%= showcause.district_authority %></td>
+        <td><%= showcause.SC_date %></td>
+        <td><%= showcause.title %></td>
+        <td><%= showcause.details %></td>
+        <td><%=l showcause.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_showcause_path(showcause), :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add A New Showcause for this Employee", new_showcause_url(:id => @employee.id) %>
+</div>
+
+
+<div class="tab-pane" id="lT">
+<%- model_class = Achievement -%>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+<!--      <th><%= model_class.human_attribute_name(:id) %></th>-->
+
+      <th><%= model_class.human_attribute_name(:award_name) %></th>
+      <th><%= model_class.human_attribute_name(:award_given_by) %></th>
+      <th><%= model_class.human_attribute_name(:details) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.achievements.each do |achievement| %>
+      <tr>
+    <!--    <td><%= link_to achievement.id, achievement_path(achievement) %></td>-->
+
+        <td><%= achievement.award_name %></td>
+        <td><%= achievement.award_given_by %></td>
+        <td><%= achievement.details %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_achievement_path(achievement), :class => 'btn btn-mini' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add A New Achievement for this Employee", new_achievement_url(:id => @employee.id) %>
+</div>
+
+<div class="tab-pane" id="lI">
+<%- model_class = Leaveemp -%>
+<table class="table table-bordered" id="leaveemps">
+  <thead>
+    <tr>
+<!--      <th><%= model_class.human_attribute_name(:id) %></th>-->
+
+      <th><%= model_class.human_attribute_name(:date_from) %></th>
+      <th><%= model_class.human_attribute_name(:date_to) %></th>
+      <th><%= model_class.human_attribute_name(:days) %></th>
+      <th><%= model_class.human_attribute_name(:leave_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:leave_reason) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.leaveemps.each do |leaveemp| %>
+      <tr>
+<!--        <td><%= link_to leaveemp.id, leaveemp_path(leaveemp) %></td>-->
+
+        <td><%= leaveemp.date_from %></td>
+        <td><%= leaveemp.date_to %></td>
+        <td><%= leaveemp.days %></td>
+        <td><%= leaveemp.leave_type.leave_type %></td>
+        <td><%= leaveemp.leave_reason %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_leaveemp_path(leaveemp), :class => 'btn btn-mini' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add A New Leave for this Employee", new_leaveemp_url(:id => @employee.id) %>
+</div>
+
+<div class="tab-pane" id="lB">
+<%- model_class = Qualification -%>
+<table class="table table-bordered" id="qualifications">
+  <thead>
+    <tr>
+<!--      <th><%= model_class.human_attribute_name(:id) %></th>-->
+      <th><%= model_class.human_attribute_name(:qualification_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:qualification_name_id) %></th>
+      <th><%= model_class.human_attribute_name(:specialisation_id) %></th>
+      <th><%= model_class.human_attribute_name(:year) %></th>
+      <th><%= model_class.human_attribute_name(:university_id) %></th>
+      <th><%= model_class.human_attribute_name(:Remarks) %></th>
+
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.qualifications.each do |qualification| %>
+      <tr>
+    <!--    <td><%= link_to qualification.id, qualification_path(qualification) %></td>-->
+        <td><%= qualification.qualification_type.Qualification_type %></td>
+        <td><%= qualification.qualification_name.Qualification_name %></td>
+        <td><%= qualification.specialisation.Specialisation_name %></td>
+        <td><%= qualification.year %></td>
+        <td><%= qualification.university.University_name %></td>
+        <td><%= qualification.Remarks %></td>
+
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_qualification_path(qualification), :class => 'btn btn-mini' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add A New Qualification for this Employee", new_qualification_url(:id => @employee.id) %>
+                </div>
+                <div class="tab-pane" id="lC">
+                  <%- model_class = Posting -%>
+<table class="table table-bordered" id="postings">
+  <thead>
+    <tr>
+<!--      <th><%= model_class.human_attribute_name(:id) %></th>-->
+
+      <th>Location</th>
+      <th>Designation (English)</th>
+      <th>Designation (Hindi)</th>
+      <th><%= model_class.human_attribute_name(:posting_from) %></th>
+      <th><%= model_class.human_attribute_name(:posting_to) %></th>
+      <th><%= model_class.human_attribute_name(:payscale) %></th>
+      <th>District</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.postings.each do |posting| %>
+      <tr>
+   <!--     <td><%= link_to posting.id, posting_path(posting) %></td>-->
+        <td><%= posting.institution_master.Institution_Name %></td>
+        <td><%= posting.designation.Designation_English %></td>
+        <td><%= posting.designation.Designation_Hindi %></td>
+        <td><%= posting.posting_from %></td>
+        <td><%= posting.posting_to %></td>
+<td><span class="WebRupee">  Rs.</span><%= posting.payscale %></td>        
+<td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_posting_path(posting), :class => 'btn btn-mini' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add A New Posting for this Employee", new_posting_url(:id => @employee.id) %>
+                </div>
+                                <div class="tab-pane" id="lD">
+                  <%- model_class = Dependent -%>
+
+<table class="table table-bordered" id="dependents">
+  <thead>
+    <tr>
+<!--      <th><%= model_class.human_attribute_name(:id) %></th>-->
+      <th><%= model_class.human_attribute_name(:Dependent_Name) %></th>
+      <th><%= model_class.human_attribute_name(:relationship) %></th>
+      <th><%= model_class.human_attribute_name(:date_of_birth) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employee.dependents.each do |dependent| %>
+      <tr>
+<!--        <td><%= link_to dependent.id, dependent_path(dependent) %></td>-->
+        <td><%= dependent.Dependent_name %></td>
+        <td><%= dependent.relation.Relation_name %></td>
+        <td><%= dependent.Birthdate %></td>
+        <td><%= dependent.relationship_id %></td>
+
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_dependent_path(dependent), :class => 'btn btn-mini' %>
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Add A New Dependent for this Employee", new_dependent_url(:id => @employee.id) %>
+                </div>
+               
+                                <div class="tab-pane" id="lE">
+                  <p>Howdy, I'm in Section B.</p>
+                </div>
+
+<div class="tab-pane" id="lX">
+
+<div class="span8">
+<%- model_class = Address -%>
+<table class="table table-striped table-condensed" id="address">
+
+<% @employee.addresses.each do |address|%><tbody>
+    <tr>
+        <td>Address 1</td>
+        <td><%= best_in_place address, :address1 %></td> 
+    </tr>
+<tr>
+        <td>address 2</td>
+        <td><%= best_in_place address, :address2 %></td>
+    </tr>
+<tr>
+        <td>Address 3</td>
+        <td><%= best_in_place address, :address3 %></td>
+    </tr>
+<tr>
+        <td>City</td>
+        <td><%= best_in_place address, :city %></td>
+    </tr>
+<tr>
+        <td>Postal Code</td>
+        <td><%= best_in_place address, :postalcode %></td>
+    </tr>
+<tr>
+<td>State</td>
+<td><%= best_in_place address, :state_id, :type => :select , :collection => State.all.map{ |e| [e.id, e.state_name] } %></td>
+</tr>
+
+<tr>
+        <td>Post Office</td>
+        <td><%= best_in_place address, :postoffice %></td>
+    </tr>
+<tr>
+        <td>Valid Since</td>
+        <td><%= best_in_place address, :validsince %></td>
+    </tr>
+<tr>
+        <td>Home Phone</td>
+        <td><%= best_in_place address, :homephone %></td>
+    </tr>
+
+<tr>
+        <td>Permanent Address 1</td>
+        <td><%= best_in_place address, :perm_address1 %></td>
+    </tr>
+<tr>
+        <td>Permanent Address 2</td>
+        <td><%= best_in_place address, :perm_address2 %></td>
+    </tr>
+<tr>
+        <td>Permanent Address 3</td>
+        <td><%= best_in_place address, :perm_address3 %></td>
+    </tr>
+
+<tr>
+        <td>permanent City</td>
+        <td><%= best_in_place address, :perm_city %></td>
+    </tr>
+<tr>
+        <td>Permanent Postalcode</td>
+        <td><%= best_in_place address, :perm_postalcode %></td>
+    </tr>
+<tr>
+        <td>Permanent Postoffice</td>
+        <td><%= best_in_place address, :perm_postoffice %></td>
+    </tr>
+<tr>
+        <td>Permanent Homephone</td>
+        <td><%= best_in_place address, :perm_homephone %></td>
+    </tr>
+
+
+<% end %>  
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <script>
+$('.best_in_place').bind("ajax:success", function(){$(this).closest('tr').effect('highlight'));});
+</script>
+              </div>
+            </div> <!-- /tabbable -->
+          </div>
+
+
+<!--<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              employees_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_employee_path(@employee), :class => 'btn' %>
+
+</div> -->         
+
+<script>
+$(function(){
+    $('#username').editable({
+        url: '/post',
+        title: 'Enter username'
+    });
+});
+</script>
+
+<script >
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+</script>

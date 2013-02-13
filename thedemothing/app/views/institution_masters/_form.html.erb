@@ -1,0 +1,14 @@
+<%= simple_form_for @institution_master, :validate => true, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :pincode,label_method: :pincode, value_method: :id, include_blank: true ,prompt: "Select a Pincode"%>
+  <%= f.input :Institution_Name %>
+  <%= f.association :Institution_type,label_method: :Institution_type, value_method: :id, include_blank: true ,prompt: "Select an Institution Type"%>
+  <%= f.association :Special_Cadre,label_method: :Special_Cadre_Type, value_method: :id, include_blank: true ,prompt: "Select a Special Cadre"%>
+  <%= f.association :district,label_method: :district_name, value_method: :id, include_blank: true ,prompt: "Select a Pincode"%>
+  <%= f.input :Beds %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                institution_masters_path, :class => 'btn' %>
+  </div>
+<% end %>

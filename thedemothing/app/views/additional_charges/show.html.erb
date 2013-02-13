@@ -1,0 +1,31 @@
+<%- model_class = AdditionalCharge -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:add_chargeID) %>:</strong></dt>
+  <dd><%= @additional_charge.add_chargeID %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:employee_id) %>:</strong></dt>
+  <dd><%= @additional_charge.employee.emp_full_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:location_id) %>:</strong></dt>
+  <dd><%= @additional_charge.location.location_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:designation_id) %>:</strong></dt>
+  <dd><%= @additional_charge.designation.Designation_English %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:from_date) %>:</strong></dt>
+  <dd><%= @additional_charge.from_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:to_date) %>:</strong></dt>
+  <dd><%= @additional_charge.to_date %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              additional_charges_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_additional_charge_path(@additional_charge), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              additional_charge_path(@additional_charge),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

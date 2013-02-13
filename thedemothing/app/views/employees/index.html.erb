@@ -1,0 +1,36 @@
+<%- model_class = Employee -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-bordered" id="employe">
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Emp Old ID</th>
+      <th>Employee Full Name</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= employee.emp_id %></td>
+        <td><%= employee.emp_treasury_id %></td>
+        <td><%= link_to employee.emp_full_name,employee_path(employee) %></td>
+        <td><%= link_to employee.emp_loc_master_id %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_employee_path,
+            :class => 'btn' %>
+<script>
+    $(document).ready(function() {
+      $('#employe').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>
