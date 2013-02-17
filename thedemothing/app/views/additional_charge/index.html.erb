@@ -1,0 +1,42 @@
+<%- model_class = AdditionalCharge -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:add_chargeID) %></th>
+      <th><%= model_class.human_attribute_name(:Employee_name) %></th>
+      <th><%= model_class.human_attribute_name(:Location) %></th>
+      <th><%= model_class.human_attribute_name(:Designation) %></th>
+      <th><%= model_class.human_attribute_name(:from_date) %></th>
+      <th><%= model_class.human_attribute_name(:to_date) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @additional_charges.each do |additional_charge| %>
+      <tr>
+        <td><%= additional_charge.add_chargeID %></td>
+        <td><%= additional_charge.employee_id %></td>
+        <td><%= additional_charge.location_id %></td>
+        <td><%= additional_charge.designation_id %></td>
+        <td><%= additional_charge.from_date %></td>
+        <td><%= additional_charge.to_date %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_additional_charge_path(additional_charge), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      additional_charge_path(additional_charge),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_additional_charge_path,
+            :class => 'btn btn-primary' %>

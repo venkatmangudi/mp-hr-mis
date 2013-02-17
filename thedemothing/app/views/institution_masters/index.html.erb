@@ -1,0 +1,55 @@
+<%- model_class = InstitutionMaster -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-bordered" id="institution_masters">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:pincode_id) %></th>
+      <th><%= model_class.human_attribute_name(:Institution_Name) %></th>
+      <th><%= model_class.human_attribute_name(:Institution_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:Special_Cadre_id) %></th>
+      <th><%= model_class.human_attribute_name(:district_id) %></th>
+      <th><%= model_class.human_attribute_name(:Beds) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @institution_masters.each do |institution_master| %>
+      <tr>
+        <td><%= link_to institution_master.id, institution_master_path(institution_master) %></td>
+        <td><%= institution_master.pincode.pincode %></td>
+        <td><%= institution_master.Institution_Name %></td>
+        <td><%= institution_master.Institution_type.Institution_type %></td>
+        <td><%= institution_master.Special_Cadre.Special_Cadre_Type %></td>
+        <td><%= institution_master.district.district_name %></td>
+        <td><%= institution_master.Beds %></td>
+        <td><%=l institution_master.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_institution_master_path(institution_master), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      institution_master_path(institution_master),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_institution_master_path,
+            :class => 'btn' %>
+
+<script>
+    $(document).ready(function() {
+      $('#institution_masters').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>

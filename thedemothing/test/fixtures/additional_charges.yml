@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  add_chargeID: 1
+  employee_id: 1
+  location_id: 1
+  designation_id: 1
+  from_date: 2013-02-12
+  to_date: 2013-02-12
+
+two:
+  add_chargeID: 1
+  employee_id: 1
+  location_id: 1
+  designation_id: 1
+  from_date: 2013-02-12
+  to_date: 2013-02-12

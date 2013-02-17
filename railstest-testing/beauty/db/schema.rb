@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206151811) do
+ActiveRecord::Schema.define(:version => 20130213175122) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "employee_id"
@@ -115,6 +115,16 @@ ActiveRecord::Schema.define(:version => 20130206151811) do
     t.string   "emp_email"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+  end
+
+  create_table "gender_view", :id => false, :force => true do |t|
+    t.integer "number_of_employees", :limit => 8, :default => 0, :null => false
+    t.integer "gender"
+  end
+
+  create_table "gender_views", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "genders", :force => true do |t|

@@ -1,0 +1,29 @@
+.field
+  = f.label :first_name
+  .input
+    = f.text_field :fname
+.field
+  = f.label :last_name
+  .input
+    = f.text_field :lname
+.field
+  = f.label :email
+  .input
+    = f.text_field :email
+.field
+  = f.label :password
+  .input
+    = f.password_field :password
+.field
+  = f.label :password_confirmation
+  .input
+    = f.password_field :password_confirmation
+.field
+  = f.label :role_id
+  .input
+    = collection_select(:user, :role_id, Role.all, :id, :role_name, {:prompt => true, :multiple=>true })
+.actions
+  %p
+  = f.submit "Submit", :class => "btn primary"
+  %button{ :type => "reset", :class => "btn" }
+    Cancel

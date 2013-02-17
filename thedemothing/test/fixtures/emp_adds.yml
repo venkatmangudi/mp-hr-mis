@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  emp_id: MyString
+  emp_martial_status_id: MyString
+  emp_present_addr: MyString
+  emp_identification: MyString
+  emp_pannum: MyString
+  emp_dlnum: MyString
+  emp_passportnum: MyString
+  emp_alt_email: MyString
+  emp_alt_phone: MyString
+  emp_alt_mobile: MyString
+  emp_present_loc_master_id: MyString
+
+two:
+  emp_id: MyString
+  emp_martial_status_id: MyString
+  emp_present_addr: MyString
+  emp_identification: MyString
+  emp_pannum: MyString
+  emp_dlnum: MyString
+  emp_passportnum: MyString
+  emp_alt_email: MyString
+  emp_alt_phone: MyString
+  emp_alt_mobile: MyString
+  emp_present_loc_master_id: MyString

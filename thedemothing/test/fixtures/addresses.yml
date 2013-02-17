@@ -1,0 +1,45 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee_id: 1
+  address1: MyString
+  address2: MyString
+  address3: MyString
+  city: MyString
+  postalcode: 1
+  postoffice: MyString
+  state_id: 1
+  validsince: 2013-02-13
+  homephone: 1
+  mobilephone: 1
+  emailid: MyString
+  perm_address1: MyString
+  perm_address2: MyString
+  perm_address3: MyString
+  perm_city: MyString
+  perm_postalcode: MyString
+  perm_postoffice: MyString
+  perm_state_id: 1
+  perm_homephone: 1
+
+two:
+  employee_id: 1
+  address1: MyString
+  address2: MyString
+  address3: MyString
+  city: MyString
+  postalcode: 1
+  postoffice: MyString
+  state_id: 1
+  validsince: 2013-02-13
+  homephone: 1
+  mobilephone: 1
+  emailid: MyString
+  perm_address1: MyString
+  perm_address2: MyString
+  perm_address3: MyString
+  perm_city: MyString
+  perm_postalcode: MyString
+  perm_postoffice: MyString
+  perm_state_id: 1
+  perm_homephone: 1

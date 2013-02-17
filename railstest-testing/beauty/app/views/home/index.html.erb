@@ -3,8 +3,8 @@
   <head>
     <style type="text/css" media="screen">
           #mp_logo{
-          	padding-left: 200px;
-          	padding-right: 30px;
+            padding-left: 200px;
+            padding-right: 30px;
             padding-top: 10px;
           }
 
@@ -15,16 +15,54 @@
         height: 155px;
       }
     </style>
-</head>
+  </head>
 <body>
-  
-     <div class="container">        
-      <div class="hero-unit">       
+
+     <div class="container">
+      <div class="hero-unit">
               <div id="mp_logo">
                   <h1>
                     <strong>Human Resources - MIS</strong><br>
-                  <small>Department of Public Health & Family Welfare</small>
-                </h1>
-            </div> 
+                    <small>Department of Public Health & Family Welfare</small>
+                  </h1>
+            </div>
      </div>
    </div>
+
+    <div class="row">
+        <div class="span9">
+          <div id="graph" style="height: 250px;"></div>
+          
+        </div>
+        <div class="span3">
+
+          <div id="genders_chart" style="height: 250px;"></div>
+  </div>
+
+   <script >
+  Morris.Bar({
+  element: 'graph',
+  data: [
+    {x: 'Pharmacist', y: 26},
+    {x: 'Cardiothorasic', y: 14},
+    {x: 'Neurosurgeon', y: 69},
+    {x: 'Endocarditist', y: 23},
+    {x: 'Aenesthician', y: 25},
+    {x: 'Radiologist', y: 52},
+  ],
+  xkey: 'x',
+  ykeys: ['y'],
+  labels: ['Y'],
+  barColors: function (row, series, type) {
+    if (type === 'bar') {
+      var red = Math.ceil(255 * row.y / this.ymax);
+      return 'rgb(' + red + ',0,0)';
+    }
+    else {
+      return '#000';
+    }
+  }
+});
+
+  </script>
+</body>

@@ -1,0 +1,2 @@
+class GenderViewController < ApplicationController
+end

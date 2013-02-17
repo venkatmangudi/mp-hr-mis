@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pincode_id: 1
+  Institution_Name: MyString
+  Institution_type_id: 1
+  Special_Cadre_id: 1
+  district_id: 1
+  Beds: 1
+
+two:
+  pincode_id: 1
+  Institution_Name: MyString
+  Institution_type_id: 1
+  Special_Cadre_id: 1
+  district_id: 1
+  Beds: 1

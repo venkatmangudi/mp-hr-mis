@@ -1,0 +1,33 @@
+<%- model_class = Qualification -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:employee_id) %>:</strong></dt>
+  <dd><%= @qualification.employee.emp_full_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:qualification_type_id) %>:</strong></dt>
+  <dd><%= @qualification.qualification_type.Qualification_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:qualification_name_id) %>:</strong></dt>
+  <dd><%= @qualification.qualification_name.Qualification_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:specialisation_id) %>:</strong></dt>
+  <dd><%= @qualification.specialisation_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:year) %>:</strong></dt>
+  <dd><%= @qualification.year %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:university_id) %>:</strong></dt>
+  <dd><%= @qualification.university.University_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Remarks) %>:</strong></dt>
+  <dd><%= @qualification.Remarks %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              employee_path(@qualification.employee_id), :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_qualification_path(@qualification), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              qualification_path(@qualification),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

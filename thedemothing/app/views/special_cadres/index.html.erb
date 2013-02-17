@@ -1,0 +1,45 @@
+<%- model_class = SpecialCadre -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-bordered" id="cadre">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:Special_Cadre_Type) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @special_cadres.each do |special_cadre| %>
+      <tr>
+        <td><%= link_to special_cadre.id, special_cadre_path(special_cadre) %></td>
+        <td><%= special_cadre.Special_Cadre_Type %></td>
+        <td><%=l special_cadre.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_special_cadre_path(special_cadre), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      special_cadre_path(special_cadre),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_special_cadre_path,
+            :class => 'btn' %>
+
+<script>
+    $(document).ready(function() {
+      $('#cadre').dataTable( {
+        "sPaginationType": "bootstrap"
+      } );
+    }
+  );
+</script>

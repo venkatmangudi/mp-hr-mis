@@ -1,0 +1,19 @@
+<%= simple_form_for @additional_charge, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :add_chargeID %>
+  <%= f.label :employaa_name %>
+  <%= collection_select(:additional_charge, :employee_id, Employee.all, :id, :emp_full_name, {:prompt => true, :multiple=>true }) %>
+  <%= f.label :location %>
+  <%= collection_select(:additional_charge, :location_id, Location.all, :id, :location_name, {:prompt => true, :multiple=>true }) %>
+ 
+
+  <%= f.input :employee_id %>
+  <%= f.input :location_id %>
+  <%= f.input :designation_id %>
+  <%= f.input :from_date %>
+  <%= f.input :to_date %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                additional_charge_path, :class => 'btn' %>
+  </div>
+<% end %>

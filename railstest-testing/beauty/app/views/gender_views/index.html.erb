@@ -1,0 +1,18 @@
+<h1>Listing gender_views</h1>
+
+<table>
+  <tr>
+    <th>Number of Employees<th>
+    <th>Gender<th>
+  </tr>
+
+<% @gender_views.each do |gender_view| %>
+  <tr>
+    <td><%= gender_view.number_of_employees %><td>
+    <td><%= gender_view.gender %><td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

@@ -1,0 +1,36 @@
+<%- model_class = SanctionedPost -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:Health_Dept_location_ID) %></th>
+      <th><%= model_class.human_attribute_name(:Designation_Name) %></th>
+      <th><%= model_class.human_attribute_name(:Sanctioned_Post) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sanctioned_posts.each do |sanctioned_post| %>
+      <tr>
+        <td><%= sanctioned_post.health_dept_locationID %></td>
+        <td><%= sanctioned_post.designation.Designation_English %></td>
+        <td><%= sanctioned_post.sac_post %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_sanctioned_post_path(sanctioned_post), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      sanctioned_post_path(sanctioned_post),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_sanctioned_post_path,
+            :class => 'btn btn-primary' %>

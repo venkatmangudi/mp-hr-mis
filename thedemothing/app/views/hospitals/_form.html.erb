@@ -1,0 +1,32 @@
+<%= semantic_form_for @hospital do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :hospital_name %>
+    <%= f.label :District %>
+    <%= collection_select(:hospital, :district_id, District.all, :id, :district_name, {:prompt => true, :multiple=>true }) %>
+    <%= f.label :Institution_Type %>
+    <%= collection_select(:hospital, :institution_type_id, InstitutionType.all, :id, :Institution_type, {:prompt => true, :multiple=>true }) %>
+    <%= f.input :total_doctors %>
+    <%= f.input :post_graduates %>
+    <%= f.input :calssI %>
+    <%= f.input :classII %>
+    <%= f.input :regular_posts %>
+    <%= f.input :con_doctors %>
+    <%= f.input :against_med_bond %>
+    <%= f.input :regular_for_duties %>
+    <%= f.input :unauthorised_absent %>
+    <%= f.input :deputation_studies %>
+    <%= f.input :others %>
+    <%= f.input :nurses %>
+    <%= f.input :pharmacists %>
+    <%= f.input :anm %>
+    <%= f.input :wardboy %>
+    <%= f.input :clerical_staff %>
+    <%= f.input :avg_daily_opd %>
+    <%= f.input :phone_no %>
+    <%= f.input :fax_no %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

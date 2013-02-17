@@ -1,0 +1,15 @@
+<%= simple_form_for @posting, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, :as => :hidden%>
+  <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, disabled: true%>
+  <%= f.association :institution_master,label_method: :Institution_Name, value_method: :id, include_blank: false %>
+  <%= f.association :designation,label_method: :Designation_English, value_method: :id, include_blank: false %>
+  <%= f.input :posting_from ,as: :string%>
+  <%= f.input :posting_to ,as: :string%>
+  <%= f.input :payscale %>
+<!--  <%= collection_select(:posting, :district_id, District.all, :id, :district_name, {:prompt => true, :multiple=>true }) %>-->
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                employee_path(@posting.employee_id), :class => 'btn' %>
+  </div>
+<% end %>

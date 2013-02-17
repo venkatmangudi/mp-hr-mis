@@ -1,0 +1,14 @@
+<%= simple_form_for @leaveemp, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, :as => :hidden%>
+  <%= f.association :employee,label_method: :emp_full_name, value_method: :id, include_blank: false, disabled: true%>
+  <%= f.input :date_from %>
+  <%= f.input :date_to %>
+  <%= f.input :days %>
+  <%= f.association :leave_type,label_method: :leave_type, value_method: :id, include_blank: false %>
+  <%= f.input :leave_reason %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                employee_path(@leaveemp.employee_id), :class => 'btn' %>
+  </div>
+<% end %>

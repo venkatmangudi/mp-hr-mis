@@ -1,0 +1,25 @@
+%h1 Users List
+
+%table.zebra-striped.condensed-table
+  %tr
+    %th
+    %th Username
+    %th Role
+    %th
+    %th
+    %th
+
+  - @user.each do |u|
+    %tr
+      %td
+      %td= u.fname
+      %td= u.role.role_name
+      %td
+        = link_to 'Edit', edit_user_path(u)
+      %td
+        = link_to 'Destroy', user_path(u), :confirm => 'Are you sure?', :method => :delete
+  
+%br
+
+%a{ :href => new_user_path }
+  %button{ :class => "btn success" } Add New User

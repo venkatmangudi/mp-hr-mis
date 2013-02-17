@@ -1,0 +1,31 @@
+<%- model_class = Showcause -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:employee_id) %>:</strong></dt>
+  <dd><%= @showcause.employee.emp_full_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:case_no) %>:</strong></dt>
+  <dd><%= @showcause.case_no %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:district_authority) %>:</strong></dt>
+  <dd><%= @showcause.district_authority %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:SC_date) %>:</strong></dt>
+  <dd><%= @showcause.SC_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @showcause.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:details) %>:</strong></dt>
+  <dd><%= @showcause.details %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              employee_path(@showcause.employee_id), :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_showcause_path(@showcause), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              showcause_path(@showcause),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

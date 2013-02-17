@@ -1,0 +1,26 @@
+<%= simple_form_for @employee, :validate => true, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :emp_id, label: 'Employee ID'%>
+  <%= f.input :emp_full_name, label: "Employee's Full Name"%>
+  <%= f.input :emp_fname, label: 'First Name'%>
+  <%= f.input :emp_mname, label: 'Middle Name'%>
+  <%= f.input :emp_lname, label: 'Last Name'%>
+  <%= f.input :emp_fathername, label: :"Father's Name" %>
+
+  <%= f.association :gender,label_method: :gender_name, value_method: :id, include_blank: false %>
+  <%= f.input :emp_dob,as: :string%>
+  <%= f.association :category,label_method: :category_name, value_method: :id, include_blank: false %>
+  <%= f.association :religion,label_method: :religion_name, value_method: :id, include_blank: false %>
+  <%= f.association :caste,label_method: :caste_name, value_method: :id, include_blank: false %>
+  <%= f.association :blood_group,label_method: :blood_group_type, value_method: :id, include_blank: false %>
+
+  <%= f.input :emp_permanent_address %>
+  <%= f.input :emp_loc_master_id %>
+  <%= f.input :emp_phone_no %>
+  <%= f.input :emp_mobile_no %>
+  <%= f.input :emp_email %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                employees_path, :class => 'btn' %>              
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<%= simple_form_for @health_dept_location, :html => { :class => 'form-horizontal' } do |f| %>
+<!--  <%= f.label :Hospital_Name %>
+  <%= collection_select(:health_dept_location, :hospital_id, Hospital.all, :id, :hospital_name, {:prompt => true, :multiple=>true }) %><br><br>-->
+  <%= f.label :Hospital_Name %>
+  <%= collection_select(:health_dept_location, :institution_master_id, InstitutionMaster.all, :id, :Institution_Name, {:prompt => true, :multiple=>true }) %><br><br>
+
+  <%= f.label :Division %>
+  <%= collection_select(:health_dept_location, :division_id, Division.all, :id, :division_name, {:prompt => true, :multiple=>true }) %><br><br>
+  <%= f.label :District %>
+  <%= collection_select(:health_dept_location, :district_id, District.all, :id, :district_name, {:prompt => true, :multiple=>true }) %><br><br>
+  <%= f.label :Block %>
+  <%= collection_select(:health_dept_location, :block_id, Block.all, :id, :block_name, {:prompt => true, :multiple=>true }) %><br><br>
+  <%= f.label :Location %>
+  <%= collection_select(:health_dept_location, :location_id, Location.all, :id, :location_name, {:prompt => true, :multiple=>true }) %><br><br>
+
+
+  <%= f.input :admin_location %>
+  <!--<%= f.input :district_code %>-->
+  <%= f.input :istribal %>
+  <%= f.input :no_of_beds %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                health_dept_locations_path, :class => 'btn' %>
+  </div>
+<% end %>
