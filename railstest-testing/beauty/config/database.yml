@@ -9,7 +9,7 @@ development:
   database: beautyness_development
   pool: 5
   username: root
-  password: spindoctor
+  password: root
   socket: /var/run/mysqld/mysqld.sock
 
 
