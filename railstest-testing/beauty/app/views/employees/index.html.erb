@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/" href="http://cdn.webrupee.com/font">
+<script src="http://code.shutterstock.com/rickshaw/vendor/d3.v2.js"></script>
+<script src="http://code.shutterstock.com/rickshaw/rickshaw.min.js"></script>
 
 
 <%- model_class = Employee -%>
@@ -77,3 +80,27 @@
 });
 
   </script>
+
+
+<div id="chart"></div>
+
+<script>
+
+var graph = new Rickshaw.Graph( {
+    element: document.querySelector("#chart"), 
+    width: 285, 
+    height: 180, 
+    series: [{
+        color: 'steelblue',
+        data: [ 
+            { x: 0, y: 40 }, 
+            { x: 1, y: 49 }, 
+            { x: 2, y: 38 }, 
+            { x: 3, y: 30 }, 
+            { x: 4, y: 32 } ]
+    }]
+});
+
+graph.render();
+
+</script>
